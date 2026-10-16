@@ -1,0 +1,9 @@
+13:00:48 data ready
+13:00:48 (a) async direct submitted
+13:01:00 (a) history: ['计算器', '计算器', '计算器', 'Syntax Error']
+13:01:00 (b) failed -> com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)
+13:01:12 (b) history: ['计算器', '计算器', '计算器', 'Syntax Error']
+13:01:12 (c) failed -> com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)
+13:01:24 (c) history: ['计算器', '计算器', '计算器', 'Syntax Error']
+13:01:24 C14 (FITS) = ["ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumn: 指定的对象中不存在数据', None, 0, -2147467259), None)"]
+13:01:24 done

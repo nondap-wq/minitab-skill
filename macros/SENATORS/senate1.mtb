@@ -1,0 +1,53 @@
+#senate1.mtb
+
+note Enter 1 if you need me to open the file 'senate97.mtw' 
+note or enter 0 if you have already opened that file.
+set 'terminal' c63;
+nobs=1.
+copy c63 k63
+execute 'senators\senate2.mtb' k63
+
+note
+note How many Senators are to be chosen in your sample?
+set 'terminal' c63;
+nobs=1.
+copy c63 k63
+note
+set c6
+1:100
+end
+#conv c11 c12, 'genders' c7
+#conv c13 c14, 'parties' c8
+#conv c15 c16, 'states' c9
+#let c10=1998-c5
+
+eras c31-c35 c41-c45
+sample k63 c6 c4 c3 c2 c5, c31-c35
+conv c6 'name', c31 c41
+conv c16 c15, c32 c42
+conv c14 c13, c33 c43
+conv c12 c11, c34 c44
+
+copy c35 c45
+name c41 'Names' c42 'States' c43 'Parties' c44 'Genders' c45 'Yrs' 
+name c33 'Dem/Reps' c34 'M/Fs'
+
+
+note
+note Here is the randomly selected sample of U.S. Senators:
+prin c41-c45
+note
+note Here are a visual display and summary statistics for the
+note years of service among the Senators in the sample:
+dotp c45
+desc c45
+note
+note The number of Democrats (1) and Republicans (2)
+note in the sample are:
+tally c33
+note
+note The number of men (1) and women (2) in the sample are:
+tally c34
+note
+end
+

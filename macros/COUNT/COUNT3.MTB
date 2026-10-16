@@ -1,0 +1,20 @@
+# count3.mtb
+
+note
+note What value do you want to count the observations falling BELOW?
+set 'terminal' c52;
+nobs=1.
+#copy c52 k7
+note
+let c73=(c72<c52(1))
+let c74=sum(c73)
+let c75=n(c73)
+let c76=c74/c75*100
+print c75 c74;
+format('In the total of ',i4,' observations, there are ',i4 ,' values which').
+print c52 c76;
+format('BELOW the value of ',F6.2,'.  This is equal to  ',F5.1,'%').
+
+
+end
+

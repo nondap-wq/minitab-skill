@@ -1,0 +1,17 @@
+#senate.mtb
+noecho
+note This macro will perform random sampling
+note of U.S. Senators, keeping track of the numbers of
+note Democrats and Republicans in each sample and
+note of the distribution of years of service in the sample.
+note
+note The user is to specify the size of the sample to be chosen.
+note
+note
+note
+note ***** Do you want to proceed? *****
+yesno k1
+exec 'senators\senate1.mtb' k1
+echo
+end
+

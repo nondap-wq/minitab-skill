@@ -1,0 +1,41 @@
+# 2psim1.mtb
+note
+note Please enter the SAMPLE SIZE (n_1) and then the number
+note of "yes" responses (or "successes") for group 1.
+set 'terminal' c71;
+nobs=2.
+note
+note Please enter the SAMPLE SIZE (n_2) and then the number
+note of "yes" responses (or "successes") for group 2.
+set 'terminal' c72;
+nobs=2.
+let k17=c71(1)  #group 1 sample size
+let k18=c72(1)  # group 2 sample size
+let k11=c71(2)   # group 1 successes
+let k12=c71(1)-c71(2) #group 1 failures
+let k13=c72(2)   #group 2 successes
+let k14=c72(1)-c72(2)  #group 2 failures
+let k15=k11+k13  #total number sucesses
+let k16=k12+k14  #total number failures
+set c73
+k15(1) k16(0)   #k15 1s and k16 0s
+note
+note Please enter the number of simulations that you wish to conduct.
+set 'terminal' c81;
+nobs=1.
+copy c81 k81
+let k82=0                # counter
+exec '2psim\2psim2.mtb' k81
+
+
+name c21 'gr 1 yes'
+note The following tally represents the number of "yes" reponses
+note randomly assigned to group 1 among the simulated experiments:
+note
+tally c21
+note
+dotp c21
+note
+note
+end
+

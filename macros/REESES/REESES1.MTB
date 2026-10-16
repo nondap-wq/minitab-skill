@@ -1,0 +1,50 @@
+# reeses1.mtb
+
+note
+note What value are you assuming for the 
+note population proportion of orange candies?
+set 'terminal' c63;
+nobs=1.
+copy c63 k63
+note
+note How many samples do you want to simulate?
+set 'terminal' c64;
+nobs=1.
+copy c64 k64
+note
+note How many candies are to be in each sample?
+set 'terminal' c65;
+nobs=1.
+copy c65 k65
+note
+note Please wait.
+note
+rand k64 c71;
+bino k65 k63.
+let c72=c71/k65
+name c71 'num orng'
+name c72 'p-hat'
+note
+note
+note If you want to analyze the results of the simulation more fully,
+note the numbers of orange candies in each sample are in c71
+note and the sample proportions of orange candies are in c72.
+note
+note
+note Here are summary statistics and visual displays for the
+note distribution of sample proportions of orange candies:
+desc c72
+dotp c72
+hist c72
+note
+note Do you want to count the number of sample proportions
+note falling in a certain interval?  Enter how many such counts
+note would like to do.  (Enter 0 if none.)
+set 'terminal' c66;
+nobs=1.
+copy c66 k66
+
+exec 'count\count1.mtb' k66
+note
+end
+

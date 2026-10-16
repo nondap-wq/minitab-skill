@@ -1,0 +1,52 @@
+#bar1p1.mtb
+noecho
+
+read c52 c54  c56  c58  c60  c61 c62  c64
+1      2      1   2  2.5  0  1.5  2.5
+1.5   2.5  1   2   1     0  1.5  2.5
+end
+
+let c53(1)=c98*100
+let c53(2)=c98*100
+let c55(1)=(1-c98)*(100)
+let c55(2)=(1-c98)*100
+let c57 (1)=c98*100
+let c57(2)=0
+let c59(1)=(1-c98)*100
+let c59(2)=0
+
+let c63(1)=c98*100
+let c63(2)=0
+let c65(1)=(1-c98)*100
+let c65(2)=0
+
+
+name c53 '%'
+
+
+let k1=5
+let k2=6
+
+plot c53*c52;
+min 2 0;
+max 2 100;
+min 1 1;
+max 1 2.5;
+axis 1;
+label 'phat                 	      		                 1-phat';
+line c52 c53;
+color k1;
+line c54 c55;
+color k2;
+line c58 c59;
+color k2;
+line c56 c57;
+color k1;
+line c60 c61;
+line c62 c63;
+color k1;
+line c64 c65;
+color k2.
+
+
+

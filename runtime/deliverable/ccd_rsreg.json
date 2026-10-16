@@ -1,0 +1,48 @@
+{
+ "commands": [
+  {
+   "label": "RSREG_BS",
+   "cmd": "RSREG; RESPONSE C9; FACTOR C6 C7; TERMS C6 C7 C6*C6 C7*C7 C6*C7; INUNIT 1; LEVELS -1000 0 8 14; FITS C11; RESIDUALS C12.",
+   "submitted_sec": 0.01
+  },
+  {
+   "label": "RSREG_TP",
+   "cmd": "RSREG; RESPONSE C10; FACTOR C6 C7; TERMS C6 C7 C6*C6 C7*C7 C6*C7; INUNIT 1; LEVELS -1000 0 8 14; FITS C13; RESIDUALS C14.",
+   "submitted_sec": 0.0
+  }
+ ],
+ "history": [
+  {
+   "index": 1,
+   "Name": "响应曲面回归:PNL_BS 与 B_Coded, SiN_MPa",
+   "outputs": 5
+  },
+  {
+   "index": 2,
+   "Name": "响应曲面回归:PNL_TP 与 B_Coded, SiN_MPa",
+   "outputs": 5
+  }
+ ],
+ "FITS_BS": [
+  "ERR TypeError(\"'float' object is not iterable\")"
+ ],
+ "RESI_BS": [
+  "ERR TypeError(\"'float' object is not iterable\")"
+ ],
+ "FITS_TP": [
+  "ERR TypeError(\"'float' object is not iterable\")"
+ ],
+ "RESI_TP": [
+  "ERR TypeError(\"'float' object is not iterable\")"
+ ],
+ "charts": {
+  "rsm_contour_bs.png": {
+   "exists": false,
+   "bytes": 0
+  },
+  "rsm_contour_tp.png": {
+   "exists": false,
+   "bytes": 0
+  }
+ }
+}

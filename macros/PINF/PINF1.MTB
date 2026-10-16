@@ -1,0 +1,23 @@
+# pinf1.mtb
+
+note
+note Please enter 1 to construct a CONFIDENCE INTERVAL 
+note or enter 2 to perform a TEST OF SIGNIFICANCE
+note or enter 3 to do BOTH.
+set 'terminal' c51;
+nobs=1.
+copy c51 k2
+let k3=(k2=1)
+let k4=(k2=2)
+let k5=(k2=3)
+exec 'pinf\pinfci.mtb' k3
+exec 'pinf\pinft.mtb' k4
+exec 'pinf\pinfb.mtb' k5
+note
+note Do you want to see a bargraph for these data?
+yesno k1
+execute 'bargraph\bar1p1.mtb' k1
+note
+end
+end
+

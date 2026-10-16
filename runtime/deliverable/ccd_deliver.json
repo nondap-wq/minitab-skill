@@ -1,0 +1,62 @@
+{
+ "minitab_models": {
+  "PNL_BS": {
+   "b0": 0.437,
+   "bB": -0.475,
+   "bA": 0.00468,
+   "bBB": 1.822,
+   "bAA": 6e-06,
+   "bBA": 0.00282
+  },
+  "PNL_TP": {
+   "b0": 0.717,
+   "bB": -0.448,
+   "bA": -0.00407,
+   "bBB": -1.269,
+   "bAA": -5e-06,
+   "bBA": -0.00231
+  }
+ },
+ "grid": {
+  "rows": 1681,
+  "SiN_range": [
+   -1000,
+   0
+  ],
+  "Thickness_range": [
+   8,
+   14
+  ]
+ },
+ "design_window": {
+  "cells_ok": 0,
+  "pct": 0.0
+ },
+ "contour_ok": [
+  true,
+  false,
+  false
+ ],
+ "charts": {
+  "mtb_rsm_bs.png": {
+   "exists": false,
+   "bytes": 0
+  },
+  "mtb_rsm_tp.png": {
+   "exists": false,
+   "bytes": 0
+  },
+  "mtb_abs_bs.png": {
+   "exists": false,
+   "bytes": 0
+  }
+ },
+ "window_max_thickness_um": {
+  "-1000": null,
+  "-800": null,
+  "-600": null,
+  "-500": null,
+  "-300": null,
+  "0": null
+ }
+}

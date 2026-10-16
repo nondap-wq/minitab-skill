@@ -1,0 +1,3 @@
+usage: minitab [-h] [--db DB] [--out OUT] [--json]
+               {doctor,run,plan,kb,demo} ...
+minitab: error: unrecognized arguments: analysis C1 LSL=9 USL=17 subgroup 1

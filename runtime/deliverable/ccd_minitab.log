@@ -1,0 +1,41 @@
+12:47:14 command file written: D:\mechanic\minitab\commands\ccd_run.mtb (776 bytes)
+12:47:14 ---- command file ----
+12:47:14    NOTE === CCD response surface run (Minitab engine) ===
+12:47:14    # ????
+12:47:14    LET C10 = C4*C4
+12:47:14    LET C11 = C5*C5
+12:47:14    LET C12 = C4*C5
+12:47:14    NAME C10 'A2'
+12:47:14    NAME C11 'B2'
+12:47:14    NAME C12 'AB'
+12:47:14    # ????????????PNL_BS
+12:47:14    REGRESS C8 5 C6 C7 C10 C11 C12;
+12:47:14      FITS C13;
+12:47:14      RESIDUALS C14;
+12:47:14      COEFFICIENTS C17;
+12:47:14      SECOEFFICIENTS C19;
+12:47:14      GSAVE "D:\\mechanic\\minitab\\output\\mtb_fourinone_bs.png".
+12:47:14    # ??????PNL_TP
+12:47:14    REGRESS C9 5 C6 C7 C10 C11 C12;
+12:47:14      FITS C15;
+12:47:14      RESIDUALS C16;
+12:47:14      COEFFICIENTS C18;
+12:47:14      SECOEFFICIENTS C20;
+12:47:14      GSAVE "D:\\mechanic\\minitab\\output\\mtb_fourinone_tp.png".
+12:47:14    # ?????????? vs ?????????????
+12:47:14    CONTOURPLOT C13 C7 C6;
+12:47:14      GSAVE "D:\\mechanic\\minitab\\output\\mtb_contour_bs.png".
+12:47:14    CONTOURPLOT C15 C7 C6;
+12:47:14      GSAVE "D:\\mechanic\\minitab\\output\\mtb_contour_tp.png".
+12:47:14    NOTE === CCD run finished ===
+12:47:17 C1 <- StdOrder (11 rows)
+12:47:17 C2 <- RunOrder (11 rows)
+12:47:17 C3 <- Blocks (11 rows)
+12:47:17 C4 <- A_Coded (11 rows)
+12:47:17 C5 <- B_Coded (11 rows)
+12:47:17 C6 <- SiN_MPa (11 rows)
+12:47:17 C7 <- Thickness_um (11 rows)
+12:47:17 C8 <- PNL_BS (11 rows)
+12:47:17 C9 <- PNL_TP (11 rows)
+12:47:18 storage columns C10..C22 named
+12:50:44 EXECUTE failed -> com_error(-2147023170, '远程过程调用失败。', None, None)

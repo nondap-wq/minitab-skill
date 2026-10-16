@@ -1,0 +1,26 @@
+{
+ "prompt": "capability C1 LSL=9 USL=17 subgroup 1",
+ "dispatch_sec": 1.83,
+ "data": {
+  "n": 30,
+  "mean": 13.76,
+  "stdev": 1.495,
+  "min": 10.2,
+  "max": 16.4,
+  "lsl": 9.0,
+  "usl": 17.0,
+  "subgroup": 1
+ },
+ "command": "CAPA C1 1; LSPEC 9; USPEC 17; GSAVE \"D:\\mechanic\\minitab\\output\\capa_chart.png\".",
+ "execute_sec": 0.37,
+ "history": [
+  {
+   "Name": "Thickness 的过程能力报告",
+   "outputs": 2
+  }
+ ],
+ "chart_exists": true,
+ "chart_bytes": 32085,
+ "ok": true,
+ "finished_at": "2026-10-16 12:11:26"
+}

@@ -1,0 +1,20 @@
+12:57:06 command file: D:\mechanic\minitab\commands\ccd_v2.mtb
+12:57:06    NOTE ccd-v2-start
+12:57:06    LET C11 = C5*C5
+12:57:06    LET C12 = C6*C6
+12:57:06    LET C13 = C5*C6
+12:57:06    NAME C11 'A2'
+12:57:06    NAME C12 'B2'
+12:57:06    NAME C13 'AB'
+12:57:06    NOTE fit-bs-start
+12:57:06    REGRESS C9 5 C6 C7 C11 C12 C13; FITS C14; RESIDUALS C15.
+12:57:06    NOTE fit-bs-done
+12:57:06    REGRESS C10 5 C6 C7 C11 C12 C13; FITS C18; RESIDUALS C19.
+12:57:06    NOTE fit-tp-done
+12:57:06    CONTOURPLOT C14 C7 C6; GSAVE "D:\mechanic\minitab\output\mtb_contour_bs.png".
+12:57:06    NOTE contour-bs-done
+12:57:06    CONTOURPLOT C18 C7 C6; GSAVE "D:\mechanic\minitab\output\mtb_contour_tp.png".
+12:57:06    NOTE ccd-v2-done
+12:57:09 data + storage columns ready
+12:57:09 async EXECUTE submitted in 0.00s
+12:57:14 history: 注 | 计算器 | 计算器 | 计算器 | 名称 | 名称 | 名称 | 注 | Syntax Error

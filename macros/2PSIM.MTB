@@ -1,0 +1,23 @@
+# 2psim.mtb
+
+noecho
+note This macro will simulate randomization of
+note "successes" and "failures" related to comparing
+note two population proportions.
+note
+note The user is to specify the sample sizes, the
+note numbers of "yes" responses for the two groups,
+note and the number of repetitions of the simulation.
+note
+note The program takes the total numbers of "successes"
+note and "failures" and distributes them randomly among
+note the two groups, allowing the user to see how often
+note the results are as extreme as in the actual data.
+note
+note Do you want to proceed?
+yesno k1
+exec '2psim\2psim1.mtb' k1
+note
+echo
+end
+

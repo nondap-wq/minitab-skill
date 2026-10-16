@@ -1,0 +1,32 @@
+# count4.mtb
+
+note
+note What is the LOWER bound on the interval
+note in which you want to count the observations?
+set 'terminal' c52;
+nobs=1.
+#copy c52 k7
+note
+note What is the UPPER bound on the interval
+note in which you want to count the observations?
+set 'terminal' c53;
+nobs=1.
+#copy c52 k8
+note
+let c73=(c72>c52(1))
+let c74=(c72<c53(1))
+let c75=c73*c74
+let c76=sum(c75)
+let c77=n(c75)
+let c78=c76/c77*100
+note
+print c77 c76 ;
+format('In the total of ',i4,' observations, there are ',i4,' values which').
+print c52 c53;
+format('fall ABOVE the value of ',F6.2,' and BELOW the value of ',F6.2).  
+print c78;
+format('This is equal to  ',F5.1,'%').
+
+
+end
+

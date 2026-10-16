@@ -1,0 +1,5 @@
+#randcorr5.mtb
+#This macro plots the errors (guess-actual) vs. trial number
+let c63=c61-c60
+plot c63*c62
+

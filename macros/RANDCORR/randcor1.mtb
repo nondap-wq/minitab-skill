@@ -1,0 +1,27 @@
+note  Give me a few minutes to warm up.....
+noecho
+random 1 c51;
+unif -1 1.
+copy c51 k51
+rand 12 c52;
+norm 70 10.
+let c55=70+10*k51*(c52-70)/10  
+let k99=0
+execute 'randcorr\randcor2.mtb' 12
+gstd
+plot c53*c52
+note Enter your guess for the correlation coefficient
+set 'terminal' c50;
+nobs=1.
+copy c50 k49
+let c60(k50)=k49
+note Here is the correct value:
+corr c52 c53
+let c61(k50)=(sum(c52*c53)-sum(c52)*sum(c53)/12)/(11*std(c52)*std(c53))
+let c62(k50)=k50
+
+
+let k50=k50+1
+end
+
+

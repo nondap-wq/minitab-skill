@@ -1,0 +1,20 @@
+#bargrph4.mtb
+#could call this macro one less time and put ones in the next column
+
+#k6 indexes the output column
+let ck6(1)=k5
+let ck6(2)=k7
+#set ck6 
+#k5 k7
+#end
+
+let k6=k6+1
+let ck6(1)=ck5(k8)
+let ck6(2)=ck5(k8)
+
+let kk6=k8+1    #sets the color
+
+let k8=k8+1
+let k6=k6+1
+
+end

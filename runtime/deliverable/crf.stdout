@@ -1,0 +1,10 @@
+13:24:04 data ready (C1..C14)
+13:24:04 submitted RSREG_BS in 0.01s
+13:24:24 submitted RSREG_TP in 0.0s
+13:24:44 history: {'index': 1, 'Name': '响应曲面回归:PNL_BS 与 B_Coded, SiN_MPa', 'outputs': 5}
+13:24:44 history: {'index': 2, 'Name': '响应曲面回归:PNL_TP 与 B_Coded, SiN_MPa', 'outputs': 5}
+13:24:44 FITS_BS = ['ERR TypeError("\'float\' object is not iterable")']
+13:24:44 RESI_BS = ['ERR TypeError("\'float\' object is not iterable")']
+13:24:44 FITS_TP = ['ERR TypeError("\'float\' object is not iterable")']
+13:24:44 RESI_TP = ['ERR TypeError("\'float\' object is not iterable")']
+13:24:44 result -> D:\mechanic\minitab\skill\runtime\deliverable\ccd_rsreg.json

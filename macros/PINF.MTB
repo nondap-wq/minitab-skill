@@ -1,0 +1,16 @@
+# pinf.mtb
+
+noecho
+note This macro will construct confidence intervals and
+note perform tests of significance related to a population proportion.
+note
+note The user is to specify the sample size 
+note and the number of "yes" responses.
+note
+note Do you want to proceed?
+yesno k1
+exec 'pinf\pinf1.mtb' k1
+note
+echo
+end
+

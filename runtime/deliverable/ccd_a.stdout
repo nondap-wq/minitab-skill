@@ -1,0 +1,5 @@
+12:34:51 data ready (C1..C15 named)
+12:34:51 OK  quadratic-columns    0.02s :: LET C11 = C5*C5
+LET C12 = C6*C6
+LET C13 = C5*C6
+12:35:52 FAIL rsreg               60.29s -> com_error(-2147023170, '远程过程调用失败。', None, None)

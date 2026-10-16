@@ -1,0 +1,16 @@
+# 2pinf.mtb
+
+noecho
+note This macro will construct confidence intervals and perform tests
+note of significance related to comparing two population proportions.
+note
+note The user is to specify the sample sizes 
+note and the numbers of "yes" responses.
+note
+note Do you want to proceed?
+yesno k1
+exec '2pinf\2pinf1.mtb' k1
+note
+echo
+end
+

@@ -1,0 +1,2517 @@
+{
+ "library": "Mtb",
+ "libid": "{0BC1FB77-06FC-418D-8005-D1942B1FA493}",
+ "types": [
+  {
+   "index": 0,
+   "name": "Model",
+   "kind": "COCLASS",
+   "doc": "Model Class",
+   "members": []
+  },
+  {
+   "index": 1,
+   "name": "IModel",
+   "kind": "DISPATCH",
+   "doc": "IModel Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "ModelProperties",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property ModelProperties"
+    },
+    {
+     "name": "GetEquation",
+     "dispid": 2,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Equation"
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "name": "Column",
+   "kind": "COCLASS",
+   "doc": "Column Class",
+   "members": []
+  },
+  {
+   "index": 3,
+   "name": "IColumn",
+   "kind": "DISPATCH",
+   "doc": "IColumn Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Comment",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Comment"
+    },
+    {
+     "name": "Comment",
+     "dispid": 1,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Comment"
+    },
+    {
+     "name": "Name",
+     "dispid": 2,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Name"
+    },
+    {
+     "name": "Name",
+     "dispid": 2,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Name"
+    },
+    {
+     "name": "Number",
+     "dispid": 3,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Number"
+    },
+    {
+     "name": "RowCount",
+     "dispid": 4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property RowCount"
+    },
+    {
+     "name": "DataType",
+     "dispid": 5,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property DataType"
+    },
+    {
+     "name": "ValueOrderType",
+     "dispid": 6,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property ValueOrderType"
+    },
+    {
+     "name": "Delete",
+     "dispid": 7,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "Clear",
+     "dispid": 8,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Clear"
+    },
+    {
+     "name": "GetData",
+     "dispid": 9,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": "method GetData"
+    },
+    {
+     "name": "SetData",
+     "dispid": 10,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": "method SetData"
+    },
+    {
+     "name": "MissingCount",
+     "dispid": 11,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property MissingCount"
+    },
+    {
+     "name": "Label",
+     "dispid": 12,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Label"
+    },
+    {
+     "name": "SetValueOrder",
+     "dispid": 13,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": "method SetValueOrder"
+    },
+    {
+     "name": "SynthesizedName",
+     "dispid": 14,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property SynthesizedName"
+    },
+    {
+     "name": "Formula",
+     "dispid": 15,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Formula"
+    },
+    {
+     "name": "FormulaStatus",
+     "dispid": 16,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property FormulaStatus"
+    },
+    {
+     "name": "Model",
+     "dispid": 17,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Model"
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "name": "MtbDataTypes",
+   "kind": "ALIAS",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 5,
+   "name": "__MIDL___MIDL_itf_Mtb_0000_0000_0001",
+   "kind": "ENUM",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 6,
+   "name": "MtbValueOrderTypes",
+   "kind": "ALIAS",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 7,
+   "name": "__MIDL___MIDL_itf_Mtb_0000_0000_0002",
+   "kind": "ENUM",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 8,
+   "name": "MtbFormulaStatusTypes",
+   "kind": "ALIAS",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 9,
+   "name": "__MIDL___MIDL_itf_Mtb_0000_0000_0007",
+   "kind": "ENUM",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 10,
+   "name": "Columns",
+   "kind": "COCLASS",
+   "doc": "Columns Class",
+   "members": []
+  },
+  {
+   "index": 11,
+   "name": "IColumns",
+   "kind": "DISPATCH",
+   "doc": "IColumns Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Item",
+     "dispid": 0,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Item"
+    },
+    {
+     "name": "Count",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Count"
+    },
+    {
+     "name": "Add",
+     "dispid": 2,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": "method Add"
+    },
+    {
+     "name": "Delete",
+     "dispid": 3,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "Remove",
+     "dispid": 4,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Remove"
+    },
+    {
+     "name": "_NewEnum",
+     "dispid": -4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property _NewEnum"
+    }
+   ]
+  },
+  {
+   "index": 12,
+   "name": "Constant",
+   "kind": "COCLASS",
+   "doc": "Constant Class",
+   "members": []
+  },
+  {
+   "index": 13,
+   "name": "IConstant",
+   "kind": "DISPATCH",
+   "doc": "IConstant Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Comment",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Comment"
+    },
+    {
+     "name": "Comment",
+     "dispid": 1,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Comment"
+    },
+    {
+     "name": "Name",
+     "dispid": 2,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Name"
+    },
+    {
+     "name": "Name",
+     "dispid": 2,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Name"
+    },
+    {
+     "name": "Number",
+     "dispid": 3,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Number"
+    },
+    {
+     "name": "DataType",
+     "dispid": 4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property DataType"
+    },
+    {
+     "name": "Delete",
+     "dispid": 5,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "GetData",
+     "dispid": 6,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method GetData"
+    },
+    {
+     "name": "SetData",
+     "dispid": 7,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method SetData"
+    },
+    {
+     "name": "SynthesizedName",
+     "dispid": 8,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property SynthesizedName"
+    },
+    {
+     "name": "Formula",
+     "dispid": 9,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Formula"
+    },
+    {
+     "name": "FormulaStatus",
+     "dispid": 10,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property FormulaStatus"
+    }
+   ]
+  },
+  {
+   "index": 14,
+   "name": "Constants",
+   "kind": "COCLASS",
+   "doc": "Constants Class",
+   "members": []
+  },
+  {
+   "index": 15,
+   "name": "IConstants",
+   "kind": "DISPATCH",
+   "doc": "IConstants Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Item",
+     "dispid": 0,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Item"
+    },
+    {
+     "name": "Count",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Count"
+    },
+    {
+     "name": "Add",
+     "dispid": 2,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": "method Add"
+    },
+    {
+     "name": "Delete",
+     "dispid": 3,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "Remove",
+     "dispid": 4,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Remove"
+    },
+    {
+     "name": "_NewEnum",
+     "dispid": -4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property _NewEnum"
+    }
+   ]
+  },
+  {
+   "index": 16,
+   "name": "Worksheet",
+   "kind": "COCLASS",
+   "doc": "Worksheet Class",
+   "members": []
+  },
+  {
+   "index": 17,
+   "name": "IWorksheet",
+   "kind": "DISPATCH",
+   "doc": "IWorksheet Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Columns",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Columns"
+    },
+    {
+     "name": "Name",
+     "dispid": 2,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Name"
+    },
+    {
+     "name": "Name",
+     "dispid": 2,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Name"
+    },
+    {
+     "name": "Path",
+     "dispid": 3,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Path"
+    },
+    {
+     "name": "FullName",
+     "dispid": 4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property FullName"
+    },
+    {
+     "name": "Delete",
+     "dispid": 5,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "Save",
+     "dispid": 6,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Save"
+    },
+    {
+     "name": "SaveAs",
+     "dispid": 7,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": "method SaveAs"
+    },
+    {
+     "name": "Creator",
+     "dispid": 8,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Creator"
+    },
+    {
+     "name": "Creator",
+     "dispid": 8,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Creator"
+    },
+    {
+     "name": "Date",
+     "dispid": 9,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Date"
+    },
+    {
+     "name": "Date",
+     "dispid": 9,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Date"
+    },
+    {
+     "name": "Comment",
+     "dispid": 10,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Comment"
+    },
+    {
+     "name": "Comment",
+     "dispid": 10,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Comment"
+    },
+    {
+     "name": "Constants",
+     "dispid": 11,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Constants"
+    },
+    {
+     "name": "Matrices",
+     "dispid": 12,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Matrices"
+    }
+   ]
+  },
+  {
+   "index": 18,
+   "name": "IMatrices",
+   "kind": "DISPATCH",
+   "doc": "IMatrices Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Item",
+     "dispid": 0,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Item"
+    },
+    {
+     "name": "Count",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Count"
+    },
+    {
+     "name": "Add",
+     "dispid": 2,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": "method Add"
+    },
+    {
+     "name": "Delete",
+     "dispid": 3,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "Remove",
+     "dispid": 4,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Remove"
+    },
+    {
+     "name": "_NewEnum",
+     "dispid": -4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property _NewEnum"
+    }
+   ]
+  },
+  {
+   "index": 19,
+   "name": "IMatrix",
+   "kind": "DISPATCH",
+   "doc": "IMatrix Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Comment",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Comment"
+    },
+    {
+     "name": "Comment",
+     "dispid": 1,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Comment"
+    },
+    {
+     "name": "Name",
+     "dispid": 2,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Name"
+    },
+    {
+     "name": "Name",
+     "dispid": 2,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Name"
+    },
+    {
+     "name": "Number",
+     "dispid": 3,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Number"
+    },
+    {
+     "name": "RowCount",
+     "dispid": 4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property RowCount"
+    },
+    {
+     "name": "ColumnCount",
+     "dispid": 5,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property ColumnCount"
+    },
+    {
+     "name": "Delete",
+     "dispid": 6,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "GetData",
+     "dispid": 7,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": "method GetData"
+    },
+    {
+     "name": "SetData",
+     "dispid": 8,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": "method SetData"
+    },
+    {
+     "name": "MissingCount",
+     "dispid": 9,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property MissingCount"
+    },
+    {
+     "name": "SynthesizedName",
+     "dispid": 10,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property SynthesizedName"
+    }
+   ]
+  },
+  {
+   "index": 20,
+   "name": "Worksheets",
+   "kind": "COCLASS",
+   "doc": "Worksheets Class",
+   "members": []
+  },
+  {
+   "index": 21,
+   "name": "IWorksheets",
+   "kind": "DISPATCH",
+   "doc": "IWorksheets Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Item",
+     "dispid": 0,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Item"
+    },
+    {
+     "name": "Count",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Count"
+    },
+    {
+     "name": "_NewEnum",
+     "dispid": -4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property _NewEnum"
+    },
+    {
+     "name": "Add",
+     "dispid": 2,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Add"
+    },
+    {
+     "name": "Delete",
+     "dispid": 3,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "Open",
+     "dispid": 4,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Open"
+    },
+    {
+     "name": "Remove",
+     "dispid": 5,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Remove"
+    }
+   ]
+  },
+  {
+   "index": 22,
+   "name": "Graph",
+   "kind": "COCLASS",
+   "doc": "Graph Class",
+   "members": []
+  },
+  {
+   "index": 23,
+   "name": "IGraph",
+   "kind": "DISPATCH",
+   "doc": "IGraph Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "CopyToClipboard",
+     "dispid": 1,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method CopyToClipboard"
+    },
+    {
+     "name": "SaveAs",
+     "dispid": 2,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": "method SaveAs"
+    }
+   ]
+  },
+  {
+   "index": 24,
+   "name": "MtbGraphFileTypes",
+   "kind": "ALIAS",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 25,
+   "name": "__MIDL___MIDL_itf_Mtb_0000_0000_0004",
+   "kind": "ENUM",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 26,
+   "name": "Command",
+   "kind": "COCLASS",
+   "doc": "Command Class",
+   "members": []
+  },
+  {
+   "index": 27,
+   "name": "IMTBCommand",
+   "kind": "DISPATCH",
+   "doc": "IMTBCommand Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Delete",
+     "dispid": 1,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "Name",
+     "dispid": 2,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Name"
+    },
+    {
+     "name": "OutputDocument",
+     "dispid": 3,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property OutputDocument"
+    },
+    {
+     "name": "Worksheet",
+     "dispid": 4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Worksheet"
+    },
+    {
+     "name": "Worksheet",
+     "dispid": 4,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Worksheet"
+    },
+    {
+     "name": "Tag",
+     "dispid": 5,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Tag"
+    },
+    {
+     "name": "Tag",
+     "dispid": 5,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Tag"
+    },
+    {
+     "name": "CommandLanguage",
+     "dispid": 6,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property CommandLanguage"
+    },
+    {
+     "name": "Outputs",
+     "dispid": 7,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Outputs"
+    },
+    {
+     "name": "CreateDate",
+     "dispid": 8,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property CreateDate"
+    }
+   ]
+  },
+  {
+   "index": 28,
+   "name": "IOutputDocument",
+   "kind": "DISPATCH",
+   "doc": "IOutputDocument Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "CopyToClipboard",
+     "dispid": 1,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method CopyToClipboard"
+    },
+    {
+     "name": "SaveAs",
+     "dispid": 2,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": "method SaveAs"
+    },
+    {
+     "name": "Text",
+     "dispid": 3,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Text"
+    },
+    {
+     "name": "RTFText",
+     "dispid": 4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property RTFText"
+    },
+    {
+     "name": "HTMLText",
+     "dispid": 5,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property HTMLText"
+    }
+   ]
+  },
+  {
+   "index": 29,
+   "name": "MtbOutputFileTypes",
+   "kind": "ALIAS",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 30,
+   "name": "__MIDL___MIDL_itf_Mtb_0000_0000_0003",
+   "kind": "ENUM",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 31,
+   "name": "IOutputs",
+   "kind": "DISPATCH",
+   "doc": "IOutputs Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Item",
+     "dispid": 0,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Item"
+    },
+    {
+     "name": "Count",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Count"
+    },
+    {
+     "name": "_NewEnum",
+     "dispid": -4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property _NewEnum"
+    },
+    {
+     "name": "Delete",
+     "dispid": 2,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "Remove",
+     "dispid": 3,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Remove"
+    }
+   ]
+  },
+  {
+   "index": 32,
+   "name": "IOutput",
+   "kind": "DISPATCH",
+   "doc": "IOutput Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Delete",
+     "dispid": 1,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "Tag",
+     "dispid": 2,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Tag"
+    },
+    {
+     "name": "Tag",
+     "dispid": 2,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Tag"
+    },
+    {
+     "name": "OutputType",
+     "dispid": 3,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property OutputType"
+    },
+    {
+     "name": "Graph",
+     "dispid": 4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Graph"
+    },
+    {
+     "name": "Text",
+     "dispid": 5,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Text"
+    },
+    {
+     "name": "RTFText",
+     "dispid": 6,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property RTFText"
+    },
+    {
+     "name": "HTMLText",
+     "dispid": 7,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property HTMLText"
+    }
+   ]
+  },
+  {
+   "index": 33,
+   "name": "MtbOutputTypes",
+   "kind": "ALIAS",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 34,
+   "name": "__MIDL___MIDL_itf_Mtb_0000_0000_0005",
+   "kind": "ENUM",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 35,
+   "name": "Commands",
+   "kind": "COCLASS",
+   "doc": "Commands Class",
+   "members": []
+  },
+  {
+   "index": 36,
+   "name": "ICommands",
+   "kind": "DISPATCH",
+   "doc": "ICommands Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Item",
+     "dispid": 0,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Item"
+    },
+    {
+     "name": "Count",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Count"
+    },
+    {
+     "name": "_NewEnum",
+     "dispid": -4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property _NewEnum"
+    },
+    {
+     "name": "Delete",
+     "dispid": 2,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "Remove",
+     "dispid": 3,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Remove"
+    },
+    {
+     "name": "OutputDocument",
+     "dispid": 4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property OutputDocument"
+    }
+   ]
+  },
+  {
+   "index": 37,
+   "name": "Output",
+   "kind": "COCLASS",
+   "doc": "Output Class",
+   "members": []
+  },
+  {
+   "index": 38,
+   "name": "Outputs",
+   "kind": "COCLASS",
+   "doc": "Outputs Class",
+   "members": []
+  },
+  {
+   "index": 39,
+   "name": "OutputDocument",
+   "kind": "COCLASS",
+   "doc": "OutputDocument Class",
+   "members": []
+  },
+  {
+   "index": 40,
+   "name": "Project",
+   "kind": "COCLASS",
+   "doc": "Project Class",
+   "members": []
+  },
+  {
+   "index": 41,
+   "name": "IProject",
+   "kind": "DISPATCH",
+   "doc": "IProject Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Name",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Name"
+    },
+    {
+     "name": "Name",
+     "dispid": 1,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Name"
+    },
+    {
+     "name": "FullName",
+     "dispid": 2,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property FullName"
+    },
+    {
+     "name": "Path",
+     "dispid": 3,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Path"
+    },
+    {
+     "name": "Worksheets",
+     "dispid": 4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Worksheets"
+    },
+    {
+     "name": "Commands",
+     "dispid": 5,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Commands"
+    },
+    {
+     "name": "ActiveWorksheet",
+     "dispid": 6,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property ActiveWorksheet"
+    },
+    {
+     "name": "ActiveWorksheet",
+     "dispid": 6,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property ActiveWorksheet"
+    },
+    {
+     "name": "Creator",
+     "dispid": 7,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Creator"
+    },
+    {
+     "name": "Creator",
+     "dispid": 7,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Creator"
+    },
+    {
+     "name": "Date",
+     "dispid": 8,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Date"
+    },
+    {
+     "name": "Date",
+     "dispid": 8,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Date"
+    },
+    {
+     "name": "Comment",
+     "dispid": 9,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Comment"
+    },
+    {
+     "name": "Comment",
+     "dispid": 9,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Comment"
+    },
+    {
+     "name": "Delete",
+     "dispid": 10,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Delete"
+    },
+    {
+     "name": "Save",
+     "dispid": 11,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Save"
+    },
+    {
+     "name": "SaveAs",
+     "dispid": 12,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": "method SaveAs"
+    },
+    {
+     "name": "ExecuteCommand",
+     "dispid": 13,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": "method ExecuteCommand"
+    },
+    {
+     "name": "ExecuteCommandAsync",
+     "dispid": 14,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": "method ExecuteCommandAsync"
+    },
+    {
+     "name": "CancelCommand",
+     "dispid": 15,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method CancelCommand"
+    }
+   ]
+  },
+  {
+   "index": 42,
+   "name": "Matrices",
+   "kind": "COCLASS",
+   "doc": "Matrices Class",
+   "members": []
+  },
+  {
+   "index": 43,
+   "name": "Matrix",
+   "kind": "COCLASS",
+   "doc": "Matrix Class",
+   "members": []
+  },
+  {
+   "index": 44,
+   "name": "Application",
+   "kind": "COCLASS",
+   "doc": "Application Class",
+   "members": []
+  },
+  {
+   "index": 45,
+   "name": "IApplication",
+   "kind": "DISPATCH",
+   "doc": "IApplication Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "ActiveProject",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property ActiveProject"
+    },
+    {
+     "name": "Quit",
+     "dispid": 2,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Quit"
+    },
+    {
+     "name": "Help",
+     "dispid": 3,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method Help"
+    },
+    {
+     "name": "Status",
+     "dispid": 4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Status"
+    },
+    {
+     "name": "LastError",
+     "dispid": 5,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property LastError"
+    },
+    {
+     "name": "Options",
+     "dispid": 6,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Options"
+    },
+    {
+     "name": "New",
+     "dispid": 7,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": "method New"
+    },
+    {
+     "name": "Open",
+     "dispid": 8,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": "method Open"
+    },
+    {
+     "name": "Handle",
+     "dispid": 9,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Handle"
+    },
+    {
+     "name": "UserInterface",
+     "dispid": 10,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property UserInterface"
+    },
+    {
+     "name": "AppPath",
+     "dispid": 11,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property AppPath"
+    },
+    {
+     "name": "AddInPath",
+     "dispid": 12,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property AddInPath"
+    },
+    {
+     "name": "Version",
+     "dispid": 13,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Version"
+    }
+   ]
+  },
+  {
+   "index": 46,
+   "name": "MtbAppStatusTypes",
+   "kind": "ALIAS",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 47,
+   "name": "__MIDL___MIDL_itf_Mtb_0000_0000_0006",
+   "kind": "ENUM",
+   "doc": "",
+   "members": []
+  },
+  {
+   "index": 48,
+   "name": "IApplicationOptions",
+   "kind": "DISPATCH",
+   "doc": "IApplicationOptions Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "DefaultFilePath",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property DefaultFilePath"
+    },
+    {
+     "name": "DefaultFilePath",
+     "dispid": 1,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property DefaultFilePath"
+    },
+    {
+     "name": "ClientMissingValueNumeric",
+     "dispid": 2,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property ClientMissingValueNumeric"
+    },
+    {
+     "name": "ClientMissingValueNumeric",
+     "dispid": 2,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property ClientMissingValueNumeric"
+    },
+    {
+     "name": "ClientMissingValueDateTime",
+     "dispid": 3,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property ClientMissingValueDateTime"
+    },
+    {
+     "name": "ClientMissingValueDateTime",
+     "dispid": 3,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property ClientMissingValueDateTime"
+    },
+    {
+     "name": "DefaultOutputFileType",
+     "dispid": 4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property DefaultOutputFileType"
+    },
+    {
+     "name": "DefaultOutputFileType",
+     "dispid": 4,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property DefaultOutputFileType"
+    }
+   ]
+  },
+  {
+   "index": 49,
+   "name": "IUserInterface",
+   "kind": "DISPATCH",
+   "doc": "UserInterface Interface",
+   "members": [
+    {
+     "name": "QueryInterface",
+     "dispid": 1610612736,
+     "invkind": "FUNC",
+     "cParams": 2,
+     "doc": ""
+    },
+    {
+     "name": "AddRef",
+     "dispid": 1610612737,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "Release",
+     "dispid": 1610612738,
+     "invkind": "FUNC",
+     "cParams": 0,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfoCount",
+     "dispid": 1610678272,
+     "invkind": "FUNC",
+     "cParams": 1,
+     "doc": ""
+    },
+    {
+     "name": "GetTypeInfo",
+     "dispid": 1610678273,
+     "invkind": "FUNC",
+     "cParams": 3,
+     "doc": ""
+    },
+    {
+     "name": "GetIDsOfNames",
+     "dispid": 1610678274,
+     "invkind": "FUNC",
+     "cParams": 5,
+     "doc": ""
+    },
+    {
+     "name": "Invoke",
+     "dispid": 1610678275,
+     "invkind": "FUNC",
+     "cParams": 8,
+     "doc": ""
+    },
+    {
+     "name": "Visible",
+     "dispid": 1,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Visible"
+    },
+    {
+     "name": "Visible",
+     "dispid": 1,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Visible"
+    },
+    {
+     "name": "Interactive",
+     "dispid": 2,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property Interactive"
+    },
+    {
+     "name": "Interactive",
+     "dispid": 2,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property Interactive"
+    },
+    {
+     "name": "UserControl",
+     "dispid": 3,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property UserControl"
+    },
+    {
+     "name": "UserControl",
+     "dispid": 3,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property UserControl"
+    },
+    {
+     "name": "DisplayAlerts",
+     "dispid": 4,
+     "invkind": "PROPGET",
+     "cParams": 0,
+     "doc": "property DisplayAlerts"
+    },
+    {
+     "name": "DisplayAlerts",
+     "dispid": 4,
+     "invkind": "PROPPUT",
+     "cParams": 1,
+     "doc": "property DisplayAlerts"
+    }
+   ]
+  },
+  {
+   "index": 50,
+   "name": "ApplicationOptions",
+   "kind": "COCLASS",
+   "doc": "ApplicationOptions Class",
+   "members": []
+  },
+  {
+   "index": 51,
+   "name": "UserInterface",
+   "kind": "COCLASS",
+   "doc": "UserInterface Class",
+   "members": []
+  }
+ ]
+}

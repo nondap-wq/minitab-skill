@@ -1,0 +1,40 @@
+# 2pinfci.mtb
+
+note
+note Please enter the confidence LEVEL that you're
+note interested in.  (For example, you would enter 95
+note if you want to produce a 95% c.i.)
+set 'terminal' c90;
+nobs=1.
+copy c90 k90
+let k91=(k90/100)+(100-k90)/200
+invcdf k91 k92
+copy k92 c92
+note
+note Please enter the SAMPLE SIZE (n_1) and then the number
+note of "yes" responses (or "successes") for group 1.
+set 'terminal' c71;
+nobs=2.
+let c81=c71(2)/c71(1) #p-hat_1
+copy c81 k81
+note
+note Please enter the SAMPLE SIZE (n_2) and then the number
+note of "yes" responses (or "successes") for group 2.
+set 'terminal' c72;
+nobs=2.
+let c82=c72(2)/c72(1) # p-hat_2
+copy c82 k82
+let c91=k92*sqrt(c81*(1-c81)/c71(1)+c82*(1-c82)/c72(1))
+let c93=c81-c82-c91
+let c94=c81-c82+c91
+prin  c81 c82;
+format('   The sample proportions are p-hat_1 =',f8.4,' and p-hat_2 =',f8.4).
+prin  c92;
+format('   The critical value is z-star =',f8.3).
+prin c90 c91;
+format('   The half-width of the ',f5.2,'% confidence interval is ',f8.3).
+prin c90 c93 c94;
+format('   The ',f5.2,'% c. i. for (theta_1-theta_2) is (',f6.3,',',f6.3,')').
+note
+end
+

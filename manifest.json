@@ -1,0 +1,15 @@
+{
+  "install": {
+    "source": "C:\\Users\\61798\\Documents\\deepseek-harness\\default-workspace\\tools\\minitab\\skill",
+    "installed_at": "C:\\Users\\61798\\.dsh\\skills\\minitab",
+    "python": "C:\\Users\\61798\\Documents\\deepseek-harness\\default-workspace\\tools\\minitab\\.venv32\\Scripts\\python.exe",
+    "python_bits": 32,
+    "python_venv_source": "uv python install 3.11-windows-x86 (workspace-local, contains pywin32 312 + comtypes)",
+    "minitab": "D:\\Program Files\\Minitab\\Mtb.exe (Minitab 22.1.0.0, typelib {0BC1FB77-06FC-418D-8005-D1942B1FA493} loadable)",
+    "notes": "python32 venv cannot be relocated (venv scripts embed absolute paths); find_python.py resolves it automatically."
+  },
+  "verification": {
+    "dry_run": "scripts/minitab_cli.py demo  -> 4/4 success, experiences written",
+    "live_com": "blocked: Mtb.exe 22.1.0.0 crashes at startup (libcef.dll 0x80000003) -> 0x80080005 CO_E_SERVER_EXEC_FAILURE"
+  }
+}

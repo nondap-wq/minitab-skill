@@ -1,0 +1,42 @@
+#cilines.mtb
+let k99=80
+let k98=(k21-1)*k1+1
+
+
+execute 'confsim\cilines2.mtb' k1  #sets the k80-k84 #constants
+
+plot c68*c69;
+min 1 -.2;
+max 1 1.2;
+line c1 c16;
+color k80;
+line c2 c17;
+color k81;
+Line c3 C18;
+color k82;
+Line c4 c19;
+color k83;
+Line c5 c20;
+color k84;
+Line c6 c21;
+color k85;
+Line c7 c22;
+color k86;
+Line c8 c23;
+color k87;
+Line c9 C24;
+color k88;
+Line  c10 C25;
+color k89;
+Line c11 c26;
+color k90;
+Line c12 c27;
+color k91;
+Line c13 c28;
+color k92;
+Line c14 c29;
+color k93;
+Line c15 c30;
+color k94;
+Line c51 c52;
+overlay.

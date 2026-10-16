@@ -1,0 +1,54 @@
+{
+ "steps": [
+  {
+   "label": "RSREG_BS",
+   "cmd": "RSREG; RESPONSE C9; FACTOR C4 C5; TERMS C4 C5 C4*C4 C5*C5 C4*C5; INUNIT 0; FITS C11; RESIDUALS C12.",
+   "status": "submitted"
+  },
+  {
+   "label": "RSREG_TP",
+   "cmd": "RSREG; RESPONSE C10; FACTOR C4 C5; TERMS C4 C5 C4*C4 C5*C5 C4*C5; INUNIT 0; FITS C13; RESIDUALS C14.",
+   "status": "error com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)"
+  },
+  {
+   "label": "CONTOUR_BS",
+   "cmd": "CONTOURPLOT C11 C5 C4; GSAVE \"D:\\mechanic\\minitab\\output\\mtb_rsm_bs.png\".",
+   "status": "error com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)"
+  },
+  {
+   "label": "CONTOUR_TP",
+   "cmd": "CONTOURPLOT C13 C5 C4; GSAVE \"D:\\mechanic\\minitab\\output\\mtb_rsm_tp.png\".",
+   "status": "error com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)"
+  }
+ ],
+ "history": [
+  {
+   "index": 1,
+   "Name": "Syntax Error",
+   "outputs": 0
+  }
+ ],
+ "rsreg_texts": [],
+ "FITS_BS": [
+  "ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumn: 指定的对象中不存在数据', None, 0, -2147467259), None)"
+ ],
+ "RESI_BS": [
+  "ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumn: 指定的对象中不存在数据', None, 0, -2147467259), None)"
+ ],
+ "FITS_TP": [
+  "ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumn: 指定的对象中不存在数据', None, 0, -2147467259), None)"
+ ],
+ "RESI_TP": [
+  "ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumn: 指定的对象中不存在数据', None, 0, -2147467259), None)"
+ ],
+ "charts": {
+  "mtb_rsm_bs.png": {
+   "exists": false,
+   "bytes": 0
+  },
+  "mtb_rsm_tp.png": {
+   "exists": false,
+   "bytes": 0
+  }
+ }
+}

@@ -1,0 +1,8 @@
+12:36:14 stage1 data ready: C1..C17
+12:36:14 OK   quad-terms               0.01s
+12:36:14 OK   quad-terms               0.01s
+12:36:14 OK   quad-terms               0.02s
+12:37:18 FAIL fit-PNL_BS              64.51s -> com_error(-2147023170, '远程过程调用失败。', None, None)
+12:37:18 FAIL fit-PNL_TP               0.00s -> com_error(-2147023174, 'RPC 服务器不可用。', None, None)
+12:37:18 FAIL contour-PNL_BS           0.00s -> com_error(-2147023174, 'RPC 服务器不可用。', None, None)
+12:37:18 FAIL contour-PNL_TP           0.00s -> com_error(-2147023174, 'RPC 服务器不可用。', None, None)

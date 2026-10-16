@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\mechanic\minitab\mtb_charts.py", line 42, in <module>
+    ok, sec = s.submit_and_wait(cmd, timeout=120)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\mechanic\minitab\skill\scripts\minitab\doe_rsm.py", line 137, in submit_and_wait
+    self.project.ExecuteCommandAsync(command)
+  File "C:\Users\61798\AppData\Local\Temp\gen_py\3.12\0BC1FB77-06FC-418D-8005-D1942B1FA493x0x1x0\IProject.py", line 48, in ExecuteCommandAsync
+    return self._oleobj_.InvokeTypes(14, LCID, 1, (24, 0), ((8, 1), (12, 17)),Command
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pywintypes.com_error: (-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)

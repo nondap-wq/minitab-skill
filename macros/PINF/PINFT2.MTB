@@ -1,0 +1,1 @@
+# pinft2.mtbcdf c95 c96let c96=1-c96prin c90;format('   For testing the null hypothesis H_0: theta =',f8.4).prin c90;format('    vs. the alternative hypothesis H_a: theta >',f8.4).end

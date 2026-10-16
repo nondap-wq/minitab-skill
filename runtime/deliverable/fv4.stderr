@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "D:\mechanic\minitab\final_v4.py", line 88, in <module>
+    log("    " + ln)
+  File "D:\mechanic\minitab\final_v4.py", line 13, in log
+    line = f"{time.strftime('%H:%M:%S')} {m}"; print(line, flush=True); lines.append(line)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'gbk' codec can't encode character '\xa0' in position 29: illegal multibyte sequence

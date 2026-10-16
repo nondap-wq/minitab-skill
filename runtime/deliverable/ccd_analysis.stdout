@@ -1,0 +1,13 @@
+12:41:50 fit PNL_BS: R2=0.9416 R2adj=0.8832 RMSE=1.1582
+12:41:50   coeffs: b0=-0.4156, b1_A=-0.4504, b2_B=-1.8838, b11_A2=+0.7448, b22_B2=+1.8218, b12_AB=+0.9964
+12:41:50 fit PNL_TP: R2=0.8626 R2adj=0.7252 RMSE=1.0801
+12:41:50   coeffs: b0=+1.5124, b1_A=+0.3157, b2_B=+0.7055, b11_A2=-0.6208, b22_B2=-1.2685, b12_AB=-0.8156
+12:41:50 design window summary: {"bs_only": {"cells": 5252, "cell_area_pct_of_design": 80.0, "sin_range_MPa": [-1000.0, 0.0], "thickness_range_um": [8.75, 14.0]}, "tp_only": {"cells": 6383, "cell_area_pct_of_design": 97.3, "sin_range_MPa": [-1000.0, 0.0], "thickness_range_um": [8.0, 14.0]}, "combined_window": {"cells": 5252, "cell_area_pct_of_design": 80.0, "sin_range_MPa": [-1000.0, 0.0], "thickness_range_um": [8.75, 14.0]}}
+12:41:50 cross-check: {"BS_at_-500MPa_max_thickness_um": 14.0, "BS_at_9.5um_needed_SiN_MPa": [-737.5, 0.0], "TP_at_-1000MPa_max_thickness_um": 14.0}
+12:41:53 Minitab grid written: 6561 rows (C1..C5)
+12:42:48 Minitab contour_bs: FAIL -> com_error(-2147023170, '远程过程调用失败。', None, None)
+12:42:48 Minitab contour_tp: FAIL -> com_error(-2147023174, 'RPC 服务器不可用。', None, None)
+12:42:48 Minitab contour_abs_bs: FAIL -> com_error(-2147023174, 'RPC 服务器不可用。', None, None)
+12:42:48 Minitab charts failed: com_error(-2147023174, 'RPC 服务器不可用。', None, None)
+12:42:49 python figures: {'bs': 'D:\\mechanic\\minitab\\output\\py_contour_bs.png', 'tp': 'D:\\mechanic\\minitab\\output\\py_contour_tp.png', 'window': 'D:\\mechanic\\minitab\\output\\py_design_window.png'}
+12:42:49 report -> D:\mechanic\minitab\skill\runtime\deliverable\ccd_report.json

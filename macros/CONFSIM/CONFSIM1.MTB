@@ -1,0 +1,21 @@
+#confsim1.mtb
+
+note Please wait..........
+let k1=15
+set c68     #subscripts for separating the samples
+1:k1
+end
+
+#let k20=k2/k1    #how many sets of size k1 do we have?
+let k20=2
+let k21=1
+
+set c51         #puts the value of theta in c51 for vertical line
+2(k4)
+end
+name c68 'interval'
+name c69 '.'
+
+execute 'confsim\confsim2.mtb' k20
+
+end

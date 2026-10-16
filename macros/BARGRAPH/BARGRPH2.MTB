@@ -1,0 +1,15 @@
+#bargrph2.mtb
+
+Note Please wait
+
+let k5=1   #indexes number of groups
+let k6=13  #indexes the output columns 
+execute 'bargraph\bargrph3.mtb' k1
+
+#make the plot
+let c51(2)=k1+.5   #creates the horizontal line at 0
+execute 'bargraph\bargrph5.mtb' 1
+
+end
+
+

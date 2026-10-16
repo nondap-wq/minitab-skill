@@ -1,0 +1,7 @@
+# 2psim2.mtb
+
+let k82=k82+1
+sample k17 c73 c74   #take n1 values from c73 and put in c74
+let c21(k82)=sum(c74)     #c21 gets total number of successes in sample
+end
+

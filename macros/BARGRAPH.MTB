@@ -1,0 +1,32 @@
+#bargraph.mtb
+
+
+
+note  This macro will produce a segmented barplot
+note   (Need groups*categories <20)
+
+retr 'bargraph\bar-init.mtw'
+note How many groups (column variable) do you have?
+set 'terminal' c99;
+nobs=1.
+let k1=c99(1)                 #k1 is number of bars
+
+
+note How many categories do you have within each group ?
+note (row variable)
+set 'terminal' c99;
+nobs=1.
+let k2=c99(1)                  #k2 is number of segments in a bar
+
+let k3=k1*k2
+
+let k4=(k3<20)               #k4 is one if the condition is met
+let k5=(k3>19)
+
+execute 'bargraph\bargrph1.mtb' k5
+
+execute 'bargraph\bargrph2.mtb' k4
+
+end
+
+

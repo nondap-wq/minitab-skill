@@ -1,0 +1,33 @@
+#bargrph3.mtb
+#this macro iterates k1times (number of bars)
+
+copy k2 c99
+
+print c99;
+format('Enter the COUNTS for your ',i2,' categories').
+copy k5 c99
+print c99;
+format('Group ', i1,':').
+set 'terminal' ck5;
+nobs=k2.
+note One moment please . . . .
+
+#replaces counts in c1-c17 with cumulative relative frequencies
+let ck5=parsum(ck5/sum(ck5))*100
+
+#k6 indexes the output columns
+let k7=k6+1
+let ck6=c11+k5
+copy c12 ck7
+
+let k6=k6+2
+let k7=k5+.5
+let k8=1
+let k99=k2-1
+execute 'bargraph\bargrph4.mtb' k99
+
+
+let k5=k5+1
+
+end
+

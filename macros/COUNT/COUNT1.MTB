@@ -1,0 +1,22 @@
+# count1.mtb
+noecho
+
+note
+note What is the form of the counting that you want to do?
+note Enter 1 to count the observations which fall ABOVE a specified value
+note or 2 to count the observations which fall BELOW a specified value
+note or 3 to count the observations which fall BETWEEN two specified values.
+set 'terminal' c51;
+nobs=1.
+copy c51 k72
+let k73=(k72=1)
+let k74=(k72=2)
+let k75=(k72=3)
+
+exec 'count\count2.mtb' k73
+exec 'count\count3.mtb' k74
+exec 'count\count4.mtb' k75
+note
+end
+
+

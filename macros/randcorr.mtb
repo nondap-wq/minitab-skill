@@ -1,0 +1,37 @@
+noecho
+erase c49-c99
+erase k48-k99
+name c60 'guess'
+name c61 'actual'
+name c62 'trial'
+name c63 'error'
+name c53 'y'
+name c52 'x'
+let k50=1
+note How many plots do you want to examine?
+set 'terminal' c49;
+nobs=1.
+copy c49 k48
+execute 'randcorr\randcor1.mtb' k48
+
+gpro
+note Let's see how you did:
+
+note Do you want to see the correlation between your guesses and the actual value? 
+note (Type yes or no)
+yesno k3
+execute 'randcorr\randcor3.mtb' k3
+
+note Do you want to see the 45 degree line?
+yesno k4
+execute 'randcorr\randcor4.mtb' k4
+
+note Do you want to see how the difference between
+note your guesses and the actual changed over time?
+yesno k5
+execute  'randcorr\randcor5.mtb' k5
+
+note Do you want to see how your errors varied over different actual values?
+yesno k6
+execute 'randcorr\randcor6.mtb' k6
+

@@ -1,0 +1,1566 @@
+[
+ {
+  "name": "2PINF1",
+  "rel_path": "2PINF/2PINF1.MTB",
+  "purpose": "Please enter 1 to construct a CONFIDENCE INTERVAL or enter 2 to perform a TEST OF SIGNIFICANCE or enter 3 to do BOTH.",
+  "keywords": [
+   "pinf",
+   "construct",
+   "confidence",
+   "interval",
+   "perform",
+   "test",
+   "significance",
+   "both",
+   "set",
+   "nobs",
+   "copy",
+   "let",
+   "exec",
+   "yesno",
+   "execute"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "LET",
+   "EXEC",
+   "YESNO",
+   "EXECUTE"
+  ],
+  "interactive": true,
+  "lines": 22,
+  "sub_macros": []
+ },
+ {
+  "name": "2PINFB",
+  "rel_path": "2PINF/2PINFB.MTB",
+  "purpose": "Please enter the code to specify the ALTERNATIVE hypothesis H_a: enter 1 if H_a has the form: theta_1 < theta_2 enter 2 if H_a has the form: theta_1 > theta_2 enter 3 if H_a has the form: theta_1 <> theta_2",
+  "keywords": [
+   "pinfb",
+   "code",
+   "specify",
+   "alternative",
+   "hypothesis",
+   "has",
+   "form",
+   "theta",
+   "set",
+   "nobs",
+   "copy",
+   "let",
+   "prin",
+   "format",
+   "exec",
+   "invcdf"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "LET",
+   "PRIN",
+   "FORMAT",
+   "EXEC",
+   "INVCDF"
+  ],
+  "interactive": true,
+  "lines": 63,
+  "sub_macros": []
+ },
+ {
+  "name": "2PINFCI",
+  "rel_path": "2PINF/2PINFCI.MTB",
+  "purpose": "Please enter the confidence LEVEL that you're interested in.  (For example, you would enter 95 if you want to produce a 95% c.i.)",
+  "keywords": [
+   "pinfci",
+   "confidence",
+   "level",
+   "you're",
+   "interested",
+   "example",
+   "would",
+   "want",
+   "produce",
+   "set",
+   "nobs",
+   "copy",
+   "let",
+   "invcdf",
+   "prin",
+   "format"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "LET",
+   "INVCDF",
+   "PRIN",
+   "FORMAT"
+  ],
+  "interactive": true,
+  "lines": 40,
+  "sub_macros": []
+ },
+ {
+  "name": "2PINFT",
+  "rel_path": "2PINF/2PINFT.MTB",
+  "purpose": "Please enter the code to specify the ALTERNATIVE hypothesis H_a: enter 1 if H_a has the form: theta_1 < theta_2 enter 2 if H_a has the form: theta_1 > theta_2 enter 3 if H_a has the form: theta_1 <> theta_2",
+  "keywords": [
+   "pinft",
+   "code",
+   "specify",
+   "alternative",
+   "hypothesis",
+   "has",
+   "form",
+   "theta",
+   "set",
+   "nobs",
+   "copy",
+   "let",
+   "prin",
+   "format",
+   "exec"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "LET",
+   "PRIN",
+   "FORMAT",
+   "EXEC"
+  ],
+  "interactive": true,
+  "lines": 45,
+  "sub_macros": []
+ },
+ {
+  "name": "2PINFT1",
+  "rel_path": "2PINF/2PINFT1.MTB",
+  "purpose": "For testing the null hypothesis H_0: theta_1 = theta_2 vs. the alternative hypothesis H_a: theta_1 < theta_2",
+  "keywords": [
+   "pinft",
+   "testing",
+   "null",
+   "hypothesis",
+   "theta",
+   "alternative",
+   "cdf"
+  ],
+  "commands": [
+   "CDF"
+  ],
+  "interactive": false,
+  "lines": 7,
+  "sub_macros": []
+ },
+ {
+  "name": "2PINFT2",
+  "rel_path": "2PINF/2PINFT2.MTB",
+  "purpose": "For testing the null hypothesis H_0: theta_1 = theta_2 vs. the alternative hypothesis H_a: theta_1 > theta_2",
+  "keywords": [
+   "pinft",
+   "testing",
+   "null",
+   "hypothesis",
+   "theta",
+   "alternative",
+   "cdf",
+   "let"
+  ],
+  "commands": [
+   "CDF",
+   "LET"
+  ],
+  "interactive": false,
+  "lines": 8,
+  "sub_macros": []
+ },
+ {
+  "name": "2PINFT3",
+  "rel_path": "2PINF/2PINFT3.MTB",
+  "purpose": "For testing the null hypothesis H_0: theta_1 = theta_2 vs. the alternative hypothesis H_a: theta_1 <> theta_2",
+  "keywords": [
+   "pinft",
+   "testing",
+   "null",
+   "hypothesis",
+   "theta",
+   "alternative",
+   "let",
+   "cdf"
+  ],
+  "commands": [
+   "LET",
+   "CDF"
+  ],
+  "interactive": false,
+  "lines": 9,
+  "sub_macros": []
+ },
+ {
+  "name": "2PINF",
+  "rel_path": "2PINF.MTB",
+  "purpose": "This macro will construct confidence intervals and perform tests of significance related to comparing two population proportions. The user is to specify the sample sizes and the numbers of \"yes\" responses. Do you want to",
+  "keywords": [
+   "pinf",
+   "construct",
+   "confidence",
+   "intervals",
+   "perform",
+   "tests",
+   "significance",
+   "related",
+   "comparing",
+   "two",
+   "population",
+   "proportions",
+   "user",
+   "specify",
+   "sample",
+   "sizes",
+   "numbers",
+   "yes",
+   "responses",
+   "want",
+   "yesno",
+   "exec",
+   "echo"
+  ],
+  "commands": [
+   "YESNO",
+   "EXEC",
+   "ECHO"
+  ],
+  "interactive": false,
+  "lines": 16,
+  "sub_macros": []
+ },
+ {
+  "name": "2PSIM1",
+  "rel_path": "2PSIM/2PSIM1.MTB",
+  "purpose": "Please enter the SAMPLE SIZE (n_1) and then the number of \"yes\" responses (or \"successes\") for group 1.",
+  "keywords": [
+   "psim",
+   "sample",
+   "size",
+   "then",
+   "number",
+   "yes",
+   "responses",
+   "successes",
+   "group",
+   "set",
+   "nobs",
+   "let",
+   "copy",
+   "exec",
+   "name",
+   "tally",
+   "dotp"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "LET",
+   "K15",
+   "COPY",
+   "EXEC",
+   "NAME",
+   "TALLY",
+   "DOTP"
+  ],
+  "interactive": true,
+  "lines": 41,
+  "sub_macros": []
+ },
+ {
+  "name": "2PSIM2",
+  "rel_path": "2PSIM/2PSIM2.MTB",
+  "purpose": "",
+  "keywords": [
+   "psim",
+   "let",
+   "sample"
+  ],
+  "commands": [
+   "LET",
+   "SAMPLE"
+  ],
+  "interactive": false,
+  "lines": 7,
+  "sub_macros": []
+ },
+ {
+  "name": "2PSIM",
+  "rel_path": "2PSIM.MTB",
+  "purpose": "This macro will simulate randomization of successes\" and \"failures\" related to comparing two population proportions. The user is to specify the sample sizes, the numbers of \"yes\" responses for the two groups, and the num",
+  "keywords": [
+   "psim",
+   "simulate",
+   "randomization",
+   "successes",
+   "failures",
+   "related",
+   "comparing",
+   "two",
+   "population",
+   "proportions",
+   "user",
+   "specify",
+   "sample",
+   "sizes",
+   "numbers",
+   "yes",
+   "responses",
+   "groups",
+   "num",
+   "yesno",
+   "exec",
+   "echo"
+  ],
+  "commands": [
+   "YESNO",
+   "EXEC",
+   "ECHO"
+  ],
+  "interactive": false,
+  "lines": 23,
+  "sub_macros": []
+ },
+ {
+  "name": "BAR1P1",
+  "rel_path": "BARGRAPH/BAR1P1.MTB",
+  "purpose": "",
+  "keywords": [
+   "bar",
+   "read",
+   "let",
+   "name",
+   "plot",
+   "min",
+   "max",
+   "axis",
+   "label",
+   "line",
+   "color"
+  ],
+  "commands": [
+   "READ",
+   "LET",
+   "NAME",
+   "PLOT",
+   "MIN",
+   "MAX",
+   "AXIS",
+   "LABEL",
+   "LINE",
+   "COLOR"
+  ],
+  "interactive": false,
+  "lines": 104,
+  "sub_macros": []
+ },
+ {
+  "name": "BAR2P1",
+  "rel_path": "BARGRAPH/BAR2P1.MTB",
+  "purpose": "",
+  "keywords": [
+   "bar",
+   "noech",
+   "let",
+   "read",
+   "name",
+   "plot",
+   "min",
+   "max",
+   "axis",
+   "label",
+   "line",
+   "color"
+  ],
+  "commands": [
+   "NOECH",
+   "LET",
+   "READ",
+   "NAME",
+   "PLOT",
+   "MIN",
+   "MAX",
+   "AXIS",
+   "LABEL",
+   "LINE",
+   "COLOR"
+  ],
+  "interactive": false,
+  "lines": 92,
+  "sub_macros": []
+ },
+ {
+  "name": "BARGRPH1",
+  "rel_path": "BARGRAPH/BARGRPH1.MTB",
+  "purpose": "I'm sorry, this macro does not have the capability",
+  "keywords": [
+   "bargrph",
+   "i'm",
+   "sorry",
+   "does",
+   "not",
+   "capability"
+  ],
+  "commands": [],
+  "interactive": false,
+  "lines": 14,
+  "sub_macros": []
+ },
+ {
+  "name": "BARGRPH2",
+  "rel_path": "BARGRAPH/BARGRPH2.MTB",
+  "purpose": "Please wait",
+  "keywords": [
+   "bargrph",
+   "wait",
+   "let",
+   "execute"
+  ],
+  "commands": [
+   "LET",
+   "EXECUTE"
+  ],
+  "interactive": false,
+  "lines": 30,
+  "sub_macros": []
+ },
+ {
+  "name": "BARGRPH3",
+  "rel_path": "BARGRAPH/BARGRPH3.MTB",
+  "purpose": "One moment please . . . .",
+  "keywords": [
+   "bargrph",
+   "one",
+   "moment",
+   "copy",
+   "print",
+   "format",
+   "set",
+   "nobs",
+   "let",
+   "execute"
+  ],
+  "commands": [
+   "COPY",
+   "PRINT",
+   "FORMAT",
+   "SET",
+   "NOBS",
+   "LET",
+   "EXECUTE"
+  ],
+  "interactive": true,
+  "lines": 66,
+  "sub_macros": []
+ },
+ {
+  "name": "BARGRPH4",
+  "rel_path": "BARGRAPH/BARGRPH4.MTB",
+  "purpose": "",
+  "keywords": [
+   "bargrph",
+   "let"
+  ],
+  "commands": [
+   "LET"
+  ],
+  "interactive": false,
+  "lines": 40,
+  "sub_macros": []
+ },
+ {
+  "name": "BARGRPH5",
+  "rel_path": "BARGRAPH/BARGRPH5.MTB",
+  "purpose": "",
+  "keywords": [
+   "bargrph",
+   "let",
+   "name",
+   "plot",
+   "min",
+   "max",
+   "line",
+   "color"
+  ],
+  "commands": [
+   "LET",
+   "NAME",
+   "PLOT",
+   "MIN",
+   "MAX",
+   "LINE",
+   "COLOR"
+  ],
+  "interactive": false,
+  "lines": 106,
+  "sub_macros": []
+ },
+ {
+  "name": "BARGRAPH",
+  "rel_path": "BARGRAPH.MTB",
+  "purpose": "This macro will produce a segmented barplot (Need groups*categories <20)",
+  "keywords": [
+   "bargraph",
+   "produce",
+   "segmented",
+   "barplot",
+   "need",
+   "groups",
+   "categories",
+   "retr",
+   "set",
+   "nobs",
+   "let",
+   "execute"
+  ],
+  "commands": [
+   "RETR",
+   "SET",
+   "NOBS",
+   "LET",
+   "EXECUTE"
+  ],
+  "interactive": true,
+  "lines": 32,
+  "sub_macros": []
+ },
+ {
+  "name": "CILINES",
+  "rel_path": "CONFSIM/CILINES.MTB",
+  "purpose": "",
+  "keywords": [
+   "cilines",
+   "let",
+   "execute",
+   "plot",
+   "min",
+   "max",
+   "line",
+   "color",
+   "overlay"
+  ],
+  "commands": [
+   "LET",
+   "EXECUTE",
+   "PLOT",
+   "MIN",
+   "MAX",
+   "LINE",
+   "COLOR",
+   "OVERLAY"
+  ],
+  "interactive": false,
+  "lines": 42,
+  "sub_macros": []
+ },
+ {
+  "name": "CILINES2",
+  "rel_path": "CONFSIM/CILINES2.MTB",
+  "purpose": "",
+  "keywords": [
+   "cilines",
+   "let"
+  ],
+  "commands": [
+   "LET"
+  ],
+  "interactive": false,
+  "lines": 3,
+  "sub_macros": []
+ },
+ {
+  "name": "CONFSIM1",
+  "rel_path": "CONFSIM/CONFSIM1.MTB",
+  "purpose": "Please wait..........",
+  "keywords": [
+   "confsim",
+   "wait",
+   "let",
+   "set",
+   "name",
+   "execute"
+  ],
+  "commands": [
+   "LET",
+   "SET",
+   "NAME",
+   "EXECUTE"
+  ],
+  "interactive": true,
+  "lines": 21,
+  "sub_macros": []
+ },
+ {
+  "name": "CONFSIM2",
+  "rel_path": "CONFSIM/CONFSIM2.MTB",
+  "purpose": "here",
+  "keywords": [
+   "confsim",
+   "here",
+   "let",
+   "copy",
+   "use",
+   "set",
+   "unstack",
+   "subs",
+   "execute"
+  ],
+  "commands": [
+   "LET",
+   "COPY",
+   "USE",
+   "SET",
+   "K24",
+   "UNSTACK",
+   "SUBS",
+   "EXECUTE"
+  ],
+  "interactive": false,
+  "lines": 29,
+  "sub_macros": []
+ },
+ {
+  "name": "CONFSIM3",
+  "rel_path": "CONFSIM/CONFSIM3.MTB",
+  "purpose": "",
+  "keywords": [
+   "confsim",
+   "let"
+  ],
+  "commands": [
+   "LET"
+  ],
+  "interactive": false,
+  "lines": 14,
+  "sub_macros": []
+ },
+ {
+  "name": "CONFSIM",
+  "rel_path": "CONFSIM.MTB",
+  "purpose": "This macro will generate random samples, construct confidence intervals based on the sample proportion in each sample, and count the number of resulting intervals that actually contain the true parameter value. The user",
+  "keywords": [
+   "confsim",
+   "generate",
+   "random",
+   "samples",
+   "construct",
+   "confidence",
+   "intervals",
+   "based",
+   "sample",
+   "proportion",
+   "count",
+   "number",
+   "resulting",
+   "actually",
+   "contain",
+   "true",
+   "parameter",
+   "user",
+   "eras",
+   "set",
+   "nobs",
+   "copy",
+   "rand",
+   "bino"
+  ],
+  "commands": [
+   "ERAS",
+   "SET",
+   "NOBS",
+   "COPY",
+   "RAND",
+   "BINO",
+   "LET",
+   "NAME",
+   "INVCDF",
+   "PRIN",
+   "FORMAT",
+   "YESNO",
+   "EXECUTE"
+  ],
+  "interactive": true,
+  "lines": 71,
+  "sub_macros": []
+ },
+ {
+  "name": "COUNT1",
+  "rel_path": "COUNT/COUNT1.MTB",
+  "purpose": "What is the form of the counting that you want to do? Enter 1 to count the observations which fall ABOVE a specified value or 2 to count the observations which fall BELOW a specified value or 3 to count the observations",
+  "keywords": [
+   "count",
+   "what",
+   "form",
+   "counting",
+   "want",
+   "observations",
+   "which",
+   "fall",
+   "above",
+   "specified",
+   "below",
+   "set",
+   "nobs",
+   "copy",
+   "let",
+   "exec"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "LET",
+   "EXEC"
+  ],
+  "interactive": true,
+  "lines": 22,
+  "sub_macros": []
+ },
+ {
+  "name": "COUNT2",
+  "rel_path": "COUNT/COUNT2.MTB",
+  "purpose": "What value do you want to count the observations falling ABOVE?",
+  "keywords": [
+   "count",
+   "what",
+   "want",
+   "observations",
+   "falling",
+   "above",
+   "set",
+   "nobs",
+   "let",
+   "print",
+   "format"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "LET",
+   "PRINT",
+   "FORMAT"
+  ],
+  "interactive": true,
+  "lines": 22,
+  "sub_macros": []
+ },
+ {
+  "name": "COUNT3",
+  "rel_path": "COUNT/COUNT3.MTB",
+  "purpose": "What value do you want to count the observations falling BELOW?",
+  "keywords": [
+   "count",
+   "what",
+   "want",
+   "observations",
+   "falling",
+   "below",
+   "set",
+   "nobs",
+   "let",
+   "print",
+   "format"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "LET",
+   "PRINT",
+   "FORMAT"
+  ],
+  "interactive": true,
+  "lines": 20,
+  "sub_macros": []
+ },
+ {
+  "name": "COUNT4",
+  "rel_path": "COUNT/COUNT4.MTB",
+  "purpose": "What is the LOWER bound on the interval in which you want to count the observations?",
+  "keywords": [
+   "count",
+   "what",
+   "lower",
+   "bound",
+   "interval",
+   "which",
+   "want",
+   "observations",
+   "set",
+   "nobs",
+   "let",
+   "print",
+   "format"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "LET",
+   "PRINT",
+   "FORMAT"
+  ],
+  "interactive": true,
+  "lines": 32,
+  "sub_macros": []
+ },
+ {
+  "name": "PINF1",
+  "rel_path": "PINF/PINF1.MTB",
+  "purpose": "Please enter 1 to construct a CONFIDENCE INTERVAL or enter 2 to perform a TEST OF SIGNIFICANCE or enter 3 to do BOTH.",
+  "keywords": [
+   "pinf",
+   "construct",
+   "confidence",
+   "interval",
+   "perform",
+   "test",
+   "significance",
+   "both",
+   "set",
+   "nobs",
+   "copy",
+   "let",
+   "exec",
+   "yesno",
+   "execute"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "LET",
+   "EXEC",
+   "YESNO",
+   "EXECUTE"
+  ],
+  "interactive": true,
+  "lines": 23,
+  "sub_macros": []
+ },
+ {
+  "name": "PINF2",
+  "rel_path": "PINF/PINF2.MTB",
+  "purpose": "",
+  "keywords": [
+   "pinf",
+   "cdf",
+   "let",
+   "prin",
+   "format"
+  ],
+  "commands": [
+   "CDF",
+   "LET",
+   "PRIN",
+   "FORMAT"
+  ],
+  "interactive": false,
+  "lines": 10,
+  "sub_macros": []
+ },
+ {
+  "name": "PINFB",
+  "rel_path": "PINF/PINFB.MTB",
+  "purpose": "Please enter the HYPOTHESIZED value of the population proportion (theta_0).",
+  "keywords": [
+   "pinfb",
+   "hypothesized",
+   "population",
+   "proportion",
+   "theta",
+   "set",
+   "nobs",
+   "copy",
+   "let",
+   "prin",
+   "format",
+   "exec",
+   "invcdf"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "LET",
+   "PRIN",
+   "FORMAT",
+   "EXEC",
+   "INVCDF"
+  ],
+  "interactive": true,
+  "lines": 58,
+  "sub_macros": []
+ },
+ {
+  "name": "PINFCI",
+  "rel_path": "PINF/PINFCI.MTB",
+  "purpose": "here",
+  "keywords": [
+   "pinfci",
+   "here",
+   "set",
+   "nobs",
+   "copy",
+   "let",
+   "invcdf",
+   "prin",
+   "format"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "LET",
+   "INVCDF",
+   "PRIN",
+   "FORMAT"
+  ],
+  "interactive": true,
+  "lines": 33,
+  "sub_macros": []
+ },
+ {
+  "name": "PINFT",
+  "rel_path": "PINF/PINFT.MTB",
+  "purpose": "Please enter the HYPOTHESIZED value of the population proportion (theta_0).",
+  "keywords": [
+   "pinft",
+   "hypothesized",
+   "population",
+   "proportion",
+   "theta",
+   "set",
+   "nobs",
+   "copy",
+   "let",
+   "prin",
+   "format",
+   "exec"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "LET",
+   "PRIN",
+   "FORMAT",
+   "EXEC"
+  ],
+  "interactive": true,
+  "lines": 39,
+  "sub_macros": []
+ },
+ {
+  "name": "PINFT1",
+  "rel_path": "PINF/PINFT1.MTB",
+  "purpose": "",
+  "keywords": [
+   "pinft",
+   "cdf",
+   "prin",
+   "format"
+  ],
+  "commands": [
+   "CDF",
+   "PRIN",
+   "FORMAT"
+  ],
+  "interactive": false,
+  "lines": 9,
+  "sub_macros": []
+ },
+ {
+  "name": "PINFT2",
+  "rel_path": "PINF/PINFT2.MTB",
+  "purpose": "",
+  "keywords": [
+   "pinft",
+   "cdf",
+   "let",
+   "prin",
+   "format"
+  ],
+  "commands": [
+   "CDF",
+   "LET",
+   "PRIN",
+   "FORMAT"
+  ],
+  "interactive": false,
+  "lines": 10,
+  "sub_macros": []
+ },
+ {
+  "name": "PINFT3",
+  "rel_path": "PINF/PINFT3.MTB",
+  "purpose": "",
+  "keywords": [
+   "pinft",
+   "let",
+   "cdf",
+   "prin",
+   "format"
+  ],
+  "commands": [
+   "LET",
+   "CDF",
+   "PRIN",
+   "FORMAT"
+  ],
+  "interactive": false,
+  "lines": 11,
+  "sub_macros": []
+ },
+ {
+  "name": "PINF",
+  "rel_path": "PINF.MTB",
+  "purpose": "This macro will construct confidence intervals and perform tests of significance related to a population proportion. The user is to specify the sample size and the number of \"yes\" responses. Do you want to proceed?",
+  "keywords": [
+   "pinf",
+   "construct",
+   "confidence",
+   "intervals",
+   "perform",
+   "tests",
+   "significance",
+   "related",
+   "population",
+   "proportion",
+   "user",
+   "specify",
+   "sample",
+   "size",
+   "number",
+   "yes",
+   "responses",
+   "want",
+   "proceed",
+   "yesno",
+   "exec",
+   "echo"
+  ],
+  "commands": [
+   "YESNO",
+   "EXEC",
+   "ECHO"
+  ],
+  "interactive": false,
+  "lines": 16,
+  "sub_macros": []
+ },
+ {
+  "name": "RANDCOR1",
+  "rel_path": "RANDCORR/randcor1.mtb",
+  "purpose": "Give me a few minutes to warm up.....",
+  "keywords": [
+   "randcor",
+   "give",
+   "few",
+   "minutes",
+   "warm",
+   "random",
+   "unif",
+   "copy",
+   "rand",
+   "norm",
+   "let",
+   "execute",
+   "gstd",
+   "plot",
+   "set",
+   "nobs",
+   "corr"
+  ],
+  "commands": [
+   "RANDOM",
+   "UNIF",
+   "COPY",
+   "RAND",
+   "NORM",
+   "LET",
+   "EXECUTE",
+   "GSTD",
+   "PLOT",
+   "SET",
+   "NOBS",
+   "CORR"
+  ],
+  "interactive": true,
+  "lines": 27,
+  "sub_macros": []
+ },
+ {
+  "name": "RANDCOR2",
+  "rel_path": "RANDCORR/RANDCOR2.MTB",
+  "purpose": "",
+  "keywords": [
+   "randcor",
+   "let",
+   "rand",
+   "norm",
+   "copy"
+  ],
+  "commands": [
+   "LET",
+   "RAND",
+   "NORM",
+   "COPY"
+  ],
+  "interactive": false,
+  "lines": 9,
+  "sub_macros": []
+ },
+ {
+  "name": "RANDCOR3",
+  "rel_path": "RANDCORR/RANDCOR3.MTB",
+  "purpose": "Here's a plot of your guesses vs. the actual value:",
+  "keywords": [
+   "randcor",
+   "here's",
+   "plot",
+   "guesses",
+   "actual",
+   "corr"
+  ],
+  "commands": [
+   "PLOT",
+   "CORR"
+  ],
+  "interactive": false,
+  "lines": 5,
+  "sub_macros": []
+ },
+ {
+  "name": "RANDCOR4",
+  "rel_path": "RANDCORR/RANDCOR4.MTB",
+  "purpose": "",
+  "keywords": [
+   "randcor",
+   "let",
+   "copy",
+   "plot",
+   "line"
+  ],
+  "commands": [
+   "LET",
+   "COPY",
+   "PLOT",
+   "LINE"
+  ],
+  "interactive": false,
+  "lines": 9,
+  "sub_macros": []
+ },
+ {
+  "name": "RANDCOR5",
+  "rel_path": "RANDCORR/RANDCOR5.MTB",
+  "purpose": "",
+  "keywords": [
+   "randcor",
+   "let",
+   "plot"
+  ],
+  "commands": [
+   "LET",
+   "PLOT"
+  ],
+  "interactive": false,
+  "lines": 5,
+  "sub_macros": []
+ },
+ {
+  "name": "RANDCOR6",
+  "rel_path": "RANDCORR/RANDCOR6.MTB",
+  "purpose": "Let's see if you were better at guessing some correlations than others:",
+  "keywords": [
+   "randcor",
+   "let's",
+   "see",
+   "were",
+   "better",
+   "guessing",
+   "some",
+   "correlations",
+   "than",
+   "others",
+   "let",
+   "plot"
+  ],
+  "commands": [
+   "LET",
+   "PLOT"
+  ],
+  "interactive": false,
+  "lines": 5,
+  "sub_macros": []
+ },
+ {
+  "name": "RANDCORR",
+  "rel_path": "randcorr.mtb",
+  "purpose": "How many plots do you want to examine?",
+  "keywords": [
+   "randcorr",
+   "how",
+   "many",
+   "plots",
+   "want",
+   "examine",
+   "erase",
+   "name",
+   "let",
+   "set",
+   "nobs",
+   "copy",
+   "execute",
+   "gpro",
+   "yesno"
+  ],
+  "commands": [
+   "ERASE",
+   "NAME",
+   "LET",
+   "SET",
+   "NOBS",
+   "COPY",
+   "EXECUTE",
+   "GPRO",
+   "YESNO"
+  ],
+  "interactive": true,
+  "lines": 37,
+  "sub_macros": []
+ },
+ {
+  "name": "REESES1",
+  "rel_path": "REESES/REESES1.MTB",
+  "purpose": "What value are you assuming for the population proportion of orange candies?",
+  "keywords": [
+   "reeses",
+   "what",
+   "assuming",
+   "population",
+   "proportion",
+   "orange",
+   "candies",
+   "set",
+   "nobs",
+   "copy",
+   "rand",
+   "bino",
+   "let",
+   "name",
+   "desc",
+   "dotp",
+   "hist",
+   "exec"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "RAND",
+   "BINO",
+   "LET",
+   "NAME",
+   "DESC",
+   "DOTP",
+   "HIST",
+   "EXEC"
+  ],
+  "interactive": true,
+  "lines": 50,
+  "sub_macros": []
+ },
+ {
+  "name": "REESES",
+  "rel_path": "REESES.MTB",
+  "purpose": "This macro will simulate random sampling of Reese's Pieces, keeping track of the number of orange candies in each sample. The user is to specify the population proportion of orange candies, the number of samples to be si",
+  "keywords": [
+   "reeses",
+   "simulate",
+   "random",
+   "sampling",
+   "reese's",
+   "pieces",
+   "keeping",
+   "track",
+   "number",
+   "orange",
+   "candies",
+   "sample",
+   "user",
+   "specify",
+   "population",
+   "proportion",
+   "samples",
+   "yesno",
+   "exec",
+   "echo"
+  ],
+  "commands": [
+   "YESNO",
+   "EXEC",
+   "ECHO"
+  ],
+  "interactive": false,
+  "lines": 15,
+  "sub_macros": []
+ },
+ {
+  "name": "SENATE1",
+  "rel_path": "SENATORS/senate1.mtb",
+  "purpose": "Enter 1 if you need me to open the file 'senate97.mtw' or enter 0 if you have already opened that file.",
+  "keywords": [
+   "senate",
+   "need",
+   "open",
+   "file",
+   "mtw'",
+   "already",
+   "opened",
+   "set",
+   "nobs",
+   "copy",
+   "execute",
+   "eras",
+   "sample",
+   "conv",
+   "name",
+   "prin",
+   "dotp",
+   "desc",
+   "tally"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "EXECUTE",
+   "ERAS",
+   "SAMPLE",
+   "CONV",
+   "NAME",
+   "PRIN",
+   "DOTP",
+   "DESC",
+   "TALLY"
+  ],
+  "interactive": true,
+  "lines": 53,
+  "sub_macros": []
+ },
+ {
+  "name": "SENATE2",
+  "rel_path": "SENATORS/SENATE2.MTB",
+  "purpose": "Please wait while I load the data file.",
+  "keywords": [
+   "senate",
+   "wait",
+   "while",
+   "load",
+   "data",
+   "file",
+   "retr"
+  ],
+  "commands": [
+   "RETR"
+  ],
+  "interactive": false,
+  "lines": 5,
+  "sub_macros": []
+ },
+ {
+  "name": "SENATORS",
+  "rel_path": "SENATORS.MTB",
+  "purpose": "This macro will perform random sampling of U.S. Senators, keeping track of the numbers of Democrats and Republicans in each sample and of the distribution of years of service in the sample. The user is to specify the siz",
+  "keywords": [
+   "senators",
+   "perform",
+   "random",
+   "sampling",
+   "keeping",
+   "track",
+   "numbers",
+   "democrats",
+   "republicans",
+   "sample",
+   "distribution",
+   "years",
+   "service",
+   "user",
+   "specify",
+   "siz",
+   "yesno",
+   "exec",
+   "echo"
+  ],
+  "commands": [
+   "YESNO",
+   "EXEC",
+   "ECHO"
+  ],
+  "interactive": false,
+  "lines": 17,
+  "sub_macros": []
+ },
+ {
+  "name": "SIMSAMP1",
+  "rel_path": "SIMSAMP/SIMSAMP1.MTB",
+  "purpose": "What value are you assuming for the population proportion of successes?",
+  "keywords": [
+   "simsamp",
+   "what",
+   "assuming",
+   "population",
+   "proportion",
+   "successes",
+   "set",
+   "nobs",
+   "copy",
+   "rand",
+   "bino",
+   "let",
+   "name",
+   "desc",
+   "dotp",
+   "hist",
+   "exec"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "RAND",
+   "BINO",
+   "LET",
+   "NAME",
+   "DESC",
+   "DOTP",
+   "HIST",
+   "EXEC"
+  ],
+  "interactive": true,
+  "lines": 50,
+  "sub_macros": []
+ },
+ {
+  "name": "SIMSAMP",
+  "rel_path": "SIMSAMP.MTB",
+  "purpose": "This macro will simulate random sampling of observations, keeping track of the number of successes in each sample. The user is to specify the population proportion, the number of samples to be simulated, and the size of",
+  "keywords": [
+   "simsamp",
+   "simulate",
+   "random",
+   "sampling",
+   "observations",
+   "keeping",
+   "track",
+   "number",
+   "successes",
+   "sample",
+   "user",
+   "specify",
+   "population",
+   "proportion",
+   "samples",
+   "simulated",
+   "size",
+   "yesno",
+   "exec",
+   "echo"
+  ],
+  "commands": [
+   "YESNO",
+   "EXEC",
+   "ECHO"
+  ],
+  "interactive": false,
+  "lines": 15,
+  "sub_macros": []
+ },
+ {
+  "name": "WIDGETS1",
+  "rel_path": "WIDGETS/WIDGETS1.MTB",
+  "purpose": "What value are you assuming for the population proportion of defectives?",
+  "keywords": [
+   "widgets",
+   "what",
+   "assuming",
+   "population",
+   "proportion",
+   "defectives",
+   "set",
+   "nobs",
+   "copy",
+   "rand",
+   "bino",
+   "let",
+   "name",
+   "tally",
+   "desc",
+   "dotp",
+   "hist",
+   "exec"
+  ],
+  "commands": [
+   "SET",
+   "NOBS",
+   "COPY",
+   "RAND",
+   "BINO",
+   "LET",
+   "NAME",
+   "TALLY",
+   "DESC",
+   "DOTP",
+   "HIST",
+   "EXEC"
+  ],
+  "interactive": true,
+  "lines": 50,
+  "sub_macros": []
+ },
+ {
+  "name": "WIDGETS",
+  "rel_path": "WIDGETS.MTB",
+  "purpose": "This macro will simulate random sampling of widgets, keeping track of the number of defectives in each sample. The user is to specify the population proportion of defectives, the number of samples to be simulated, and th",
+  "keywords": [
+   "widgets",
+   "simulate",
+   "random",
+   "sampling",
+   "keeping",
+   "track",
+   "number",
+   "defectives",
+   "sample",
+   "user",
+   "specify",
+   "population",
+   "proportion",
+   "samples",
+   "simulated",
+   "yesno",
+   "exec",
+   "echo"
+  ],
+  "commands": [
+   "YESNO",
+   "EXEC",
+   "ECHO"
+  ],
+  "interactive": false,
+  "lines": 15,
+  "sub_macros": []
+ }
+]

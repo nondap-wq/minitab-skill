@@ -1,0 +1,101 @@
+{
+ "steps": [
+  [
+   "BS",
+   true
+  ],
+  [
+   "TP",
+   true
+  ],
+  [
+   "CT_BS",
+   true
+  ],
+  [
+   "CT_TP",
+   false
+  ]
+ ],
+ "history": [
+  {
+   "index": 1,
+   "Name": "响应曲面回归:PNL_BS 与 B_Coded, SiN_MPa",
+   "outputs": 5
+  },
+  {
+   "index": 2,
+   "Name": "响应曲面回归:PNL_TP 与 B_Coded, SiN_MPa",
+   "outputs": 5
+  },
+  {
+   "index": 3,
+   "Name": "Syntax Error",
+   "outputs": 0
+  }
+ ],
+ "rsreg_texts": [
+  {
+   "cmd": "响应曲面回归:PNL_BS 与 B_Coded, SiN_MPa",
+   "text": "已编码系数\r\n\r\n项                      系数     系数标准误    T 值    P 值      方差膨胀因子\r\n常量                 455677    119364   3.82  0.012\r\nB_Coded           -911131    238796  -3.82  0.012  1916838.52\r\nSiN_MPa             -4.21      1.61  -2.62  0.047   320842.92\r\nB_Coded*B_Coded    455455    119432   3.81  0.012  1917068.05\r\nSiN_MPa*SiN_MPa  0.000054  0.000034   1.56  0.180       18.24\r\nB_Coded*SiN_MPa      4.23      1.61   2.63  0.047   320828.38\r\n"
+  },
+  {
+   "cmd": "响应曲面回归:PNL_BS 与 B_Coded, SiN_MPa",
+   "text": "模型汇总\r\n\r\n      S    R-sq  R-sq（调整）  R-sq（预测）\r\n1.15819  94.16%    88.32%    63.67%\r\n"
+  },
+  {
+   "cmd": "响应曲面回归:PNL_BS 与 B_Coded, SiN_MPa",
+   "text": "方差分析\r\n\r\n来源                   自由度   Adj SS  Adj MS    F 值    P 值\r\n模型                     5  108.096  21.619  16.12  0.004\r\n  线性                   2   28.832  14.416  10.75  0.015\r\n    B_Coded            1   19.528  19.528  14.56  0.012\r\n    SiN_MPa            1    9.221   9.221   6.87  0.047\r\n  平方                   2   19.940   9.970   7.43  0.032\r\n    B_Coded*B_Coded    1   19.508  19.508  14.54  0.012\r\n    SiN_MPa*SiN_MPa    1    3.261   3.261   2.43  0.180\r\n  双因子交互作用              1    9.267   9.267   6.91  0.047\r\n    B_Coded*SiN_MPa    1    9.267   9.267   6.91  0.047\r\n误差                     5    6.707   1.341\r\n合计                    10  114.803\r\n"
+  },
+  {
+   "cmd": "响应曲面回归:PNL_BS 与 B_Coded, SiN_MPa",
+   "text": "以未编码单位表示的回归方程\r\n\r\nPNL_BS = 0.437 - 0.475 B_Coded + 0.00468 SiN_MPa + 1.822 B_Coded*B_Coded\r\n         + 0.000006 SiN_MPa*SiN_MPa + 0.00282 B_Coded*SiN_MPa\r\n"
+  },
+  {
+   "cmd": "响应曲面回归:PNL_BS 与 B_Coded, SiN_MPa",
+   "text": "异常观测值的拟合和诊断\r\n\r\n观测值  PNL_BS     拟合值     残差  标准化残差\r\n 10  11.198  10.012  1.186   2.03  R\r\n\r\nR  残差大\r\n"
+  },
+  {
+   "cmd": "响应曲面回归:PNL_TP 与 B_Coded, SiN_MPa",
+   "text": "已编码系数\r\n\r\n项                       系数     系数标准误    T 值    P 值      方差膨胀因子\r\n常量                 -316890    111318  -2.85  0.036\r\nB_Coded             634018    222700   2.85  0.036  1916838.52\r\nSiN_MPa               3.45      1.50   2.30  0.070   320842.92\r\nB_Coded*B_Coded    -317127    111382  -2.85  0.036  1917068.05\r\nSiN_MPa*SiN_MPa  -0.000045  0.000032  -1.39  0.222       18.24\r\nB_Coded*SiN_MPa      -3.46      1.50  -2.31  0.069   320828.38\r\n"
+  },
+  {
+   "cmd": "响应曲面回归:PNL_TP 与 B_Coded, SiN_MPa",
+   "text": "模型汇总\r\n\r\n      S    R-sq  R-sq（调整）  R-sq（预测）\r\n1.08012  86.26%    72.52%    16.36%\r\n"
+  },
+  {
+   "cmd": "响应曲面回归:PNL_TP 与 B_Coded, SiN_MPa",
+   "text": "方差分析\r\n\r\n来源                   自由度  Adj SS  Adj MS   F 值    P 值\r\n模型                     5  36.617   7.323  6.28  0.033\r\n  线性                   2  15.678   7.839  6.72  0.038\r\n    B_Coded            1   9.456   9.456  8.11  0.036\r\n    SiN_MPa            1   6.175   6.175  5.29  0.070\r\n  平方                   2   9.968   4.984  4.27  0.083\r\n    B_Coded*B_Coded    1   9.458   9.458  8.11  0.036\r\n    SiN_MPa*SiN_MPa    1   2.265   2.265  1.94  0.222\r\n  双因子交互作用              1   6.209   6.209  5.32  0.069\r\n    B_Coded*SiN_MPa    1   6.209   6.209  5.32  0.069\r\n误差                     5   5.833   1.167\r\n合计                    10  42.451\r\n"
+  },
+  {
+   "cmd": "响应曲面回归:PNL_TP 与 B_Coded, SiN_MPa",
+   "text": "以未编码单位表示的回归方程\r\n\r\nPNL_TP = 0.717 - 0.448 B_Coded - 0.00407 SiN_MPa - 1.269 B_Coded*B_Coded\r\n         - 0.000005 SiN_MPa*SiN_MPa - 0.00231 B_Coded*SiN_MPa\r\n"
+  },
+  {
+   "cmd": "响应曲面回归:PNL_TP 与 B_Coded, SiN_MPa",
+   "text": "异常观测值的拟合和诊断\r\n\r\n观测值  PNL_TP     拟合值      残差  标准化残差\r\n 10  -6.461  -5.341  -1.120  -2.06  R\r\n\r\nR  残差大\r\n"
+  }
+ ],
+ "FITS_BS": [
+  "ERR TypeError(\"'float' object is not iterable\")"
+ ],
+ "RESI_BS": [
+  "ERR TypeError(\"'float' object is not iterable\")"
+ ],
+ "FITS_TP": [
+  "ERR TypeError(\"'float' object is not iterable\")"
+ ],
+ "RESI_TP": [
+  "ERR TypeError(\"'float' object is not iterable\")"
+ ],
+ "charts": {
+  "mtb_rsm_bs.png": {
+   "exists": false,
+   "bytes": 0
+  },
+  "mtb_rsm_tp.png": {
+   "exists": false,
+   "bytes": 0
+  }
+ }
+}

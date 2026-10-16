@@ -1,0 +1,53 @@
+#bargrph5.mtb
+let k1=k1+.5
+name c14 '%'
+name c13 'groups'
+Plot c14*c13;
+min 2 0;
+max 2 100;
+min 1 1;
+max 1 k1;
+Line c13 c14;
+color k14;
+Line c15 c16;
+color k16;
+Line C17 c18;
+color k18;
+Line c19 C20;
+color k20;
+line c21 c22;
+color k22;
+line c23 c24;
+color k24;
+line c25 c26;
+color k26;
+line c27 c28;
+color k28;
+Line c29 c30;
+color k30;
+Line c31 c32;
+color k32;
+line c33 c34;
+color k34;
+line c35 c36;
+color k36;
+line c37 c38;
+color k38;
+line c39 c40;
+color k40;
+line c41 c42;
+color k42;
+line c43 c44;
+color k44;
+line c45 c46;
+color k46;
+line c47 c48;
+color k48;
+line c49 c50;
+color k50;
+line c51 c52; 
+color k52.
+
+
+
+

@@ -1,0 +1,92 @@
+{
+ "factor_names": {
+  "A": "SiN residual stress (MPa)",
+  "B": "Diaphragm thickness (um)"
+ },
+ "minitab_model": {
+  "command": "RSREG; RESPONSE <resp>; FACTOR C6 C7; TERMS C6 C7 C6*C6 C7*C7 C6*C7; INUNIT 1; LEVELS -1000 0 8 14; FITS <col>; RESIDUALS <col>.",
+  "pnl_bs": {
+   "R_sq": 0.9416,
+   "R_sq_adj": 0.8832,
+   "R_sq_pred": 0.6367,
+   "S": 1.15819,
+   "F": 16.12,
+   "p": 0.004,
+   "anova": {
+    "model_df": 5,
+    "model_AdjSS": 108.096,
+    "linear_p": 0.015,
+    "square_p": 0.032,
+    "interaction_p": 0.047,
+    "B_coded_p": 0.012,
+    "SiN_MPa_p": 0.047,
+    "B2_p": 0.012,
+    "SiN2_p": 0.18,
+    "BxSiN_p": 0.047,
+    "error_df": 5,
+    "error_AdjSS": 6.707,
+    "total_AdjSS": 114.803
+   }
+  }
+ },
+ "fitted_values": {
+  "PNL_BS": [
+   "ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumns: IColumns 集合为空，没有包含有效的 IColumn 对象', None, 0, -2147024809), None)"
+  ],
+  "PNL_TP": [
+   "ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumns: IColumns 集合为空，没有包含有效的 IColumn 对象', None, 0, -2147024809), None)"
+  ]
+ },
+ "abs_lt_3_at_runs": {
+  "PNL_BS": [],
+  "PNL_TP": []
+ },
+ "charts": {
+  "mtb_rsm_bs.png": {
+   "exists": false,
+   "bytes": 0
+  },
+  "mtb_rsm_tp.png": {
+   "exists": false,
+   "bytes": 0
+  }
+ },
+ "contour_status": [
+  {
+   "label": "CONTOUR_BS",
+   "status": "submitted"
+  },
+  {
+   "label": "CONTOUR_TP",
+   "status": "error com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)"
+  }
+ ],
+ "design_points": {
+  "SiN_MPa": [
+   -500.0,
+   -146.45,
+   -146.45,
+   -853.55,
+   -853.55,
+   -500.0,
+   0.0,
+   -500.0,
+   -1000.0,
+   -1000.0,
+   0.0
+  ],
+  "Thickness_um": [
+   11.0,
+   13.12,
+   8.88,
+   8.88,
+   13.12,
+   14.0,
+   11.0,
+   8.0,
+   11.0,
+   8.0,
+   8.0
+  ]
+ }
+}

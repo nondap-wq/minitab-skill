@@ -1,0 +1,6 @@
+GMACRO
+  # MTB_CHART: ?????? PNG
+  NOTE === MTB_CHART start ===
+  CONTOURPLOT C11 C7 C6; GSAVE "chart.png".
+  NOTE === MTB_CHART done ===
+ENDMACRO

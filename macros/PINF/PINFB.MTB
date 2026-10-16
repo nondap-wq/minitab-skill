@@ -1,0 +1,58 @@
+# pinfb.mtb
+
+note
+note Please enter the HYPOTHESIZED value of
+note the population proportion (theta_0).
+set 'terminal' c90;
+nobs=1.
+copy c90 k90
+note
+note Please enter the code to specify the ALTERNATIVE hypothesis H_a:
+note enter 1 if H_a has the form: theta < theta_0
+note enter 2 if H_a has the form: theta > theta_0
+note enter 3 if H_a has the form: theta � theta_0
+set 'terminal' c91;
+nobs=1.
+copy c91 k91
+let k92=(k91=1)
+let k93=(k91=2)
+let k94=(k91=3)
+note
+note Please enter the SAMPLE SIZE (n) and then the number
+note of "yes" responses (or "successes") on the same line.
+set 'terminal' c97;
+nobs=2.
+let c98=c97(2)/c97(1)
+copy c98 k98
+let c95=(c98-c90)/sqrt(c90*(1-c90)/c97(1))
+prin  c98;
+format('   The sample proportion is p-hat =',f8.4).
+exec 'pinf\pinft1.mtb' k92
+exec 'pinf\pinft2.mtb' k93
+exec 'pinf\pinft3.mtb' k94
+prin c95;
+format('   The test statistic is z =',f8.3).
+prin c96;
+format('   The p-value of the test is',f8.4).
+note
+note Please enter the confidence LEVEL that you're
+note interested in.  (For example, you would enter 95
+note if you want to produce a 95% c.i.)
+set 'terminal' c90;
+nobs=1.
+copy c90 k90
+let k91=(k90/100)+(100-k90)/200
+invcdf k91 k92
+copy k92 c92
+let c91=k92*sqrt(c98*(1-c98)/c97(1))
+let c93=c98-c91
+let c94=c98+c91
+prin  c92;
+format('   The critical value is z-star =',f8.3).
+prin c90 c91;
+format('   The half-width of the ',f5.2,'% confidence interval is ',f8.3).
+prin c90 c93 c94;
+format('   The ',f5.2,'% confidence interval for theta is (',f6.3,',',f6.3,')').
+note
+end
+

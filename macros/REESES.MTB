@@ -1,0 +1,15 @@
+# reeses.mtb
+
+noecho
+note This macro will simulate random sampling of Reese's Pieces,
+note keeping track of the number of orange candies in each sample.
+note
+note The user is to specify the population proportion of orange candies,
+note the number of samples to be simulated, and the size of each sample.
+note
+note ***** Do you want to proceed? *****
+yesno k1
+exec 'reeses\reeses1.mtb' k1
+echo
+end
+

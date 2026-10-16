@@ -1,0 +1,8 @@
+13:38:44 session attached
+13:38:44 FITS_BS = ["ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumns: IColumns 集合为空，没有包含有效的 IColumn 对象', None, 0, -2147024809), None)"]
+13:38:44 FITS_TP = ["ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumns: IColumns 集合为空，没有包含有效的 IColumn 对象', None, 0, -2147024809), None)"]
+13:38:44 CONTOUR_BS: submitted
+13:39:24 CONTOUR_TP: error com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)
+13:40:04 chart mtb_rsm_bs.png: {'exists': False, 'bytes': 0}
+13:40:04 chart mtb_rsm_tp.png: {'exists': False, 'bytes': 0}
+13:40:04 report -> D:\mechanic\minitab\skill\runtime\deliverable\ccd_final_report.json

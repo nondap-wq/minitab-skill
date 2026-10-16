@@ -1,0 +1,5 @@
+#randcorr6.mtb
+note Let's see if you were better at guessing some correlations than others:
+let c63=c61-c60
+plot c63*c61
+

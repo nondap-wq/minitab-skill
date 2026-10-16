@@ -1,0 +1,14 @@
+13:32:44 data ready
+13:32:44 RSREG_BS: submitted
+13:33:14 RSREG_TP: error com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)
+13:33:44 CONTOUR_BS: error com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)
+13:34:14 CONTOUR_TP: error com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)
+13:34:59 history count = 1
+13:34:59    {'index': 1, 'Name': 'Syntax Error', 'outputs': 0}
+13:34:59 FITS_BS = ["ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumn: 指定的对象中不存在数据', None, 0, -2147467259), None)"]
+13:34:59 RESI_BS = ["ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumn: 指定的对象中不存在数据', None, 0, -2147467259), None)"]
+13:34:59 FITS_TP = ["ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumn: 指定的对象中不存在数据', None, 0, -2147467259), None)"]
+13:34:59 RESI_TP = ["ERR com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IColumn: 指定的对象中不存在数据', None, 0, -2147467259), None)"]
+13:34:59 chart mtb_rsm_bs.png: {'exists': False, 'bytes': 0}
+13:34:59 chart mtb_rsm_tp.png: {'exists': False, 'bytes': 0}
+13:34:59 result -> D:\mechanic\minitab\skill\runtime\deliverable\final_v3.json

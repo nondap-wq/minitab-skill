@@ -1,0 +1,15 @@
+13:11:30 F1: D:\mechanic\minitab\commands\r_count.mtb
+NOTE try-count-form
+REGRESS C9 3 C6 C7 C8.
+NOTE count-form-done
+
+13:11:30 F2: D:\mechanic\minitab\commands\r_resp.mtb
+NOTE try-response-form
+REGRESS C9; CONTINUOUS C6 C7.
+NOTE response-form-done
+
+13:11:33 data ready
+13:11:48 submit failed for r_resp.mtb: com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)
+13:12:03 f1_count_form: ['计算器', '计算器', '计算器', '注', 'Syntax Error']
+13:12:03 f2_response_form: ['计算器', '计算器', '计算器', '注', 'Syntax Error']
+13:12:03 done

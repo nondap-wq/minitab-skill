@@ -1,0 +1,45 @@
+# 2pinft.mtb
+
+note
+note Please enter the code to specify the ALTERNATIVE hypothesis H_a:
+note enter 1 if H_a has the form: theta_1 < theta_2
+note enter 2 if H_a has the form: theta_1 > theta_2
+note enter 3 if H_a has the form: theta_1 <> theta_2
+set 'terminal' c91;
+nobs=1.
+copy c91 k91
+let k92=(k91=1)
+let k93=(k91=2)
+let k94=(k91=3)
+note
+note Please enter the SAMPLE SIZE (n_1) and then the number
+note of "yes" responses (or "successes") for group 1.
+set 'terminal' c71;
+nobs=2.
+let c81=c71(2)/c71(1) #p-hat_1
+copy c81 k81
+note
+note Please enter the SAMPLE SIZE (n_2) and then the number
+note of "yes" responses (or "successes") for group 2.
+set 'terminal' c72;
+nobs=2.
+let c82=c72(2)/c72(1) # p-hat_2
+copy c82 k82
+let c73=c71+c72
+let c83=c73(2)/c73(1) # p-hat_c
+let c95=(c81-c82)/sqrt(c83*(1-c83)*(1/c71(1)+1/c72(1)))
+prin  c81 c82;
+format('   The sample proportions are p-hat_1 =',f8.4,' and p-hat_2 =',f8.4).
+prin  c83;
+format('   The combined sample proportion is p-hat_c =',f8.4).
+exec '2pinf\2pinft1.mtb' k92
+exec '2pinf\2pinft2.mtb' k93
+exec '2pinf\2pinft3.mtb' k94
+prin c95;
+format('   The test statistic is z =',f8.3).
+prin c96;
+format('   The p-value of the test is',f8.4).
+note
+note
+end
+

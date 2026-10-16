@@ -1,0 +1,12 @@
+13:45:36 grid built: 1681 rows
+13:45:36 design window cells: 0/1681 = 0%
+13:45:39 grid written to Minitab
+13:45:39 contour_bs: submitted
+13:45:39 contour_bs: done in 0s
+13:45:39 contour_tp: submit error com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)
+13:45:39 contour_abs: submit error com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)
+13:45:44 chart mtb_rsm_bs.png: {'exists': False, 'bytes': 0}
+13:45:44 chart mtb_rsm_tp.png: {'exists': False, 'bytes': 0}
+13:45:44 chart mtb_abs_bs.png: {'exists': False, 'bytes': 0}
+13:45:44 window_max_thickness = {'-1000': None, '-800': None, '-600': None, '-500': None, '-300': None, '0': None}
+13:45:44 report -> D:\mechanic\minitab\skill\runtime\deliverable\ccd_deliver.json

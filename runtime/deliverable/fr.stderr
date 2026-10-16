@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "D:\mechanic\minitab\final_run.py", line 184, in <module>
+    log(f"    {json.dumps(d, ensure_ascii=False, default=str)[:220]}")
+  File "D:\mechanic\minitab\final_run.py", line 32, in log
+    print(line, flush=True)
+UnicodeEncodeError: 'gbk' codec can't encode character '\xa0' in position 60: illegal multibyte sequence

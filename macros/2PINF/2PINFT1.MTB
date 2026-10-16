@@ -1,0 +1,7 @@
+# 2pinft1.mtb
+
+cdf c95 c96
+note     For testing the null hypothesis H_0: theta_1 = theta_2
+note     vs. the alternative hypothesis H_a: theta_1 < theta_2
+end
+

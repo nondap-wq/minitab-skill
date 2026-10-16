@@ -1,0 +1,5 @@
+#randcorr3.mtb
+note  Here's a plot of your guesses vs. the actual value:
+plot c60*c61
+corr c60 c61
+

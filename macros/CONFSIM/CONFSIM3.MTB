@@ -1,0 +1,14 @@
+#confsim3.mtb
+# This macro stacks the lower and upper endpoints 
+#for each column and replaces the upper endpoint 
+#column with the sample number
+
+let k14=k15+k1          #indexes the upper limit for that sample
+let ck15(2)=ck14
+
+let ck14(1)=k22       #replaces upper limit with set number
+let ck14(2)=k22
+
+let k15=k15+1
+let k22=k22+1  
+end

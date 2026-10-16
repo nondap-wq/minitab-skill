@@ -1,0 +1,10 @@
+12:54:23 probe command file: D:\mechanic\minitab\commands\probe_regress.mtb
+12:54:26 data + quadratic columns ready
+12:54:26 async EXECUTE submitted 0.02s
+12:54:31 history: 计算器 | 计算器 | 计算器 | 注 | Syntax Error
+12:56:27 hist {'index': 1, 'Name': '计算器', 'outputs': 0}
+12:56:27 hist {'index': 2, 'Name': '计算器', 'outputs': 0}
+12:56:27 hist {'index': 3, 'Name': '计算器', 'outputs': 0}
+12:56:27 hist {'index': 4, 'Name': '注', 'outputs': 1}
+12:56:27 hist {'index': 5, 'Name': 'Syntax Error', 'outputs': 0}
+12:56:27 done

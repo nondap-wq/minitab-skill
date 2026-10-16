@@ -1,0 +1,14 @@
+13:27:00 data ready (C1..C15)
+13:27:00 RSREG_BS: submitted (async) in 0.0s
+13:27:12 RSREG_TP: submitted (async) in 0.0s
+13:27:24 CONTOUR_BS: submitted (async) in 0.0s
+13:27:36 CONTOUR_TP: FAILED -> com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)
+13:27:48 CONTOUR_ABSBS: FAILED -> com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)
+13:28:00 history entries: 3
+13:28:00    '响应曲面回归:PNL_BS 与 B_Coded, SiN_MPa' outputs=5
+13:28:00    '响应曲面回归:PNL_TP 与 B_Coded, SiN_MPa' outputs=5
+13:28:00    'Syntax Error' outputs=0
+13:28:00 output cmd[1] '响应曲面回归:PNL_BS 与 B_Coded, SiN_MPa' docs=5
+13:28:00     {"Text": "已编码系数\r\n\r\n项                      系数     系数标准误    T 值    P 值      方差膨胀因子\r\n常量                 455677    119364   3.82  0.012\r\nB_Coded           -911131    238796  -3.82  0.012  1916838.52\r\nSiN_MPa       
+13:28:00     {"Text": "模型汇总\r\n\r\n      S    R-sq  R-sq（调整）  R-sq（预测）\r\n1.15819  94.16%    88.32%    63.67%\r\n"}
+13:28:00     {"Text": "方差分析\r\n\r\n来源                   自由度   Adj SS  Adj MS    F 值    P 值\r\n模型                     5  108.096  21.619  16.12  0.004\r\n  线性                   2   28.832  14.416  10.75  0.015\r\n    B_Coded          

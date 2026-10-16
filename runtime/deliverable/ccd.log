@@ -1,0 +1,5 @@
+12:31:08 COM session ready
+12:31:08 data written: 10 columns x 11 rows
+12:31:08 storage columns C11..C16 prepared
+12:31:08 ok 0.01s :: CCDESIGN 2 1; ALPHA 1.41421; LEVELS -1000 0 8 14; DESIGN.
+12:32:06 RSREG PNL_BS: FAIL -> com_error(-2147023170, '远程过程调用失败。', None, None)

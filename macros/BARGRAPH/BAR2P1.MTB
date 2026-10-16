@@ -1,0 +1,46 @@
+#bar2p1.mtb
+noech
+
+let c53(1)=c81*100
+let c53(2)=c81*100
+
+read c52  c55-c59 c64  c65 c68-c69
+1     100 1 0    1.5  2     2   2.5 1       0
+1.5 100 1 100 1.5 2.5  2  2.5   2.5   0
+end
+
+let c61(1)=c82*100
+let c61(2)=c82*100
+
+let k52=2
+let k53=3
+
+name c53 '%'
+name c52 '.'
+plot c53*c52;
+min 2 0;
+max 2 100;
+min 1 1;
+max 1 2.5;
+axis 1;
+label 'Group 1                             Group 2';
+line c52 c53;
+color k52;
+line c52 c55;
+color k53;
+line c56 c57;
+color 1;
+line c58 c57;
+color 1;
+line c59 c61;
+color k52;
+line c59 c55;
+color k53;
+line c64 c57;
+color 1;
+line c65 c57;
+color 1;
+line c68 c69;
+color 1.
+
+

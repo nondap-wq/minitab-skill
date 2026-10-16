@@ -1,0 +1,8 @@
+12:11:22 dispatch ok (1.83s)
+12:11:22 project ready
+12:11:23 data written: 30 numeric rows -> C1 'Thickness'
+12:11:23 data stats: {'n': 30, 'mean': 13.76, 'stdev': 1.495, 'min': 10.2, 'max': 16.4, 'lsl': 9.0, 'usl': 17.0, 'subgroup': 1}
+12:11:23 ExecuteCommand ok (0.37s): CAPA C1 1; LSPEC 9; USPEC 17; GSAVE "D:\mechanic\minitab\output\capa_chart.png".
+12:11:26 history: {'Name': 'Thickness 的过程能力报告', 'outputs': 2}
+12:11:26 chart: exists=True bytes=32085 -> D:\mechanic\minitab\output\capa_chart.png
+12:11:26 result -> D:\mechanic\minitab\skill\runtime\deliverable\result.json

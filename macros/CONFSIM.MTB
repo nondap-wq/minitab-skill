@@ -1,0 +1,71 @@
+# confsim.mtb
+noecho
+note This macro will generate random samples, construct confidence intervals 
+note based on the sample proportion in each sample, and count the number
+note of resulting intervals that actually contain the true parameter value.
+note
+note The user is to specify the number of samples, the sample size, 
+note the population proportion (theta), and the confidence level.
+note
+
+eras c61-c79
+note
+note Please enter the NUMBER OF SAMPLES to be simulated.
+#note     (multiple of 15 for plots)
+set 'terminal' c52;
+nobs=1.
+copy c52 k2					#k2=number of samples
+note Please enter the SAMPLE SIZE (n).
+set 'terminal' c53;
+nobs=1.
+copy c53 k3					#k3=n
+note Please enter the true value of the POPULATION PROPORTION (theta).
+set 'terminal' c54;
+nobs=1.
+copy c54 k4					#k4=theta
+note
+note ***** Please wait while I generate the random samples. *****
+note
+rand k2 c61;
+bino k3 k4.
+
+
+let c62=c61/k3
+name c62 'p-hat'
+note Please enter the CONFIDENCE LEVEL desired.  (For example, 
+note if you want 95% confidence intervals, enter 95.)
+set 'terminal' c55;
+nobs=1.
+copy c55 k5				#k5=confidence level
+let k6=(k5/100)+(100-k5)/200
+invcdf k6 k7				#finding critical value
+let c63=c62-k7*sqrt(c62*(1-c62)/k3)  #lower endpoints
+let c64=c62+k7*sqrt(c62*(1-c62)/k3) #upper endpoints
+
+let c65=(c63<k4)
+let c66=(c64>k4)
+let c67=c65*c66
+name c67 'inthere?'
+name c63 'lower' c64 'upper'
+note The following list gives the sample proportion,
+note the lower and upper endpoints of the confidence interval, and
+note an indicator of whether each interval contains the true value of theta.
+prin c62 c63 c64 c67
+let k8=sum(c67)
+copy k8 c71
+copy k2 c72
+let c73=round(c71/c72*100)
+prin c71 c72 c73;
+format(i4,' of the ',i4,' intervals generated = ',i4,'% contain the true value of theta.').
+note
+note
+
+
+
+note Do you want to see the first 30 confidence intervals plotted?
+yesno k30
+execute 'confsim\confsim1.mtb' k30
+
+end
+
+

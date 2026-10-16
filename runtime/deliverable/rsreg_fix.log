@@ -1,0 +1,4 @@
+13:22:07 data ready (C1..C15)
+13:22:07 submitted (0.00s): RSREG; RESPONSE C9; FACTOR C6 C7; TERMS C6 C7 C6*C6 C7*C7 C6*C7.
+13:22:22 history: ['Syntax Error']
+13:22:22 submit failed: com_error(-2147352567, '发生意外。', (0, 'Mtb.Application.1', 'IProject: Minitab 正忙于处理操作，此时不能接受其他命令。', None, 0, -2147467259), None)

@@ -1,0 +1,50 @@
+# widgets1.mtb
+
+note
+note What value are you assuming for the 
+note population proportion of defectives?
+set 'terminal' c63;
+nobs=1.
+copy c63 k63
+note
+note How many samples do you want to simulate?
+set 'terminal' c64;
+nobs=1.
+copy c64 k64
+note
+note How many widgets are to be in each sample?
+set 'terminal' c65;
+nobs=1.
+copy c65 k65
+note
+note Please wait.
+note
+rand k64 c72;
+bino k65 k63.
+let c71=c72/k65
+name c72 'num def'
+name c71 'p-hat'
+note
+note
+note If you want to analyze the results of the simulation more fully,
+note the numbers of defectives in each sample are in c72
+note and the sample proportions of defectives are in c71.
+note
+note
+note Here are summary statistics and visual displays for the
+note distribution of sample numbers of defectives:
+tally c72
+desc c72
+dotp c72
+hist c72
+note
+note Do you want to count the number of sample defectives
+note falling in a certain interval?  Enter how many such counts
+note would like to do.  (Enter 0 if none.)
+set 'terminal' c66;
+nobs=1.
+copy c66 k66
+exec 'count\count1.mtb' k66
+note
+end
+

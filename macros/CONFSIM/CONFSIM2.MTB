@@ -1,0 +1,29 @@
+#confsim2.mtb
+#k2 is number of samples
+
+
+let k22=(k21-1)*k1+1
+let k23=(k21*k1)
+copy (c63 c64) (c70 c71);    #selects out next subset of 15 from main data set
+use k22:k23.
+copy c62 c69;
+use k22:k23.
+
+let k24=k22-1
+let k25=k23+1
+set c52       #gives endpoints for the vertical line
+k24 k25
+end
+
+unstack c70 c1-c15;   #lower limits start in column 1 
+subs c68.
+unstack c71 c16-c30;       #upper limits
+subs c68.
+
+let k15=1
+note here
+execute 'confsim\confsim3.mtb' k1
+execute 'confsim\cilines.mtb' 1
+let k21=k21+1
+let c68=c68+k1
+end

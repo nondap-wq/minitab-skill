@@ -1,0 +1,18 @@
+intent   : capability -> CAPA (cols=[], params={'distribution': 'NORMAL'}, conf=0.69)
+commands :
+   CAPA C1 1.
+   �� category=capability -> command=CAPA
+   �� knowledge: CAPA (quality) reliability=0.86 success=5 fail=0
+   �� pitfall[CAPABILITY]: RuntimeError: �޷����� Mtb.Application: com_error(-2146959355, '����������ʧ��', None, None) -> ������ (x1)
+   �� pitfall[CAPABILITY]: com_error: (-2147352567, '�������⡣', (0, 'Mtb.Application.1', 'IColumns: IColumns ����Ϊ�գ�û�а�����Ч�� IColumn ����', None, 0, -2147024809), None) -> ��������﷨���������� ; ��ͷ���� . ��β�����������Ƿ���� (x1)
+   �� similar case score=0.7407: 'capability' cmd='CAPA C1 1.' success=True
+   �� similar case score=0.7407: 'capability' cmd='CAPA C1 1.' success=True
+   �� similar case score=0.7407: 'capability' cmd='CAPA C1 1.' success=True
+   �� CAPA δ��������ޣ�Minitab Ҫ������ USPEC �� LSPEC������ '1 ��Ԫ̫��'
+   �� CAPA �ٷ��﷨��Minitab �Ự����ο�����CAPA [C...C E]��E = �����С���������У���������� LSPEC/USPEC����ֵ/��׼���� MU/SIGMA��ͼ�ο��� NOCHART/GSAVE
+backend  : com
+success  : True  time=2849ms
+   [setup] sample data loaded
+   [command] 
+knowledge: {'experience_id': 'ec2995a9-caa7-42d6-8cb2-0286c57ed217', 'pitfall_id': None, 'simulated': False}
+artifact : script -> D:\mechanic\minitab\skill\runtime\artifacts\outputs\generated_driver.py

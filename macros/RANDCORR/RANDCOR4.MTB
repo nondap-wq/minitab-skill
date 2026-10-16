@@ -1,0 +1,9 @@
+#randcorr4.mtb
+#This macro reproduces the scatterplot of guess vs. actual 
+# with 45 degree line superimposed.
+
+let c59(1)=min('actual')
+let c59(2)=max('actual')
+copy c59 c58
+plot c60*c61;
+line c58 c59.

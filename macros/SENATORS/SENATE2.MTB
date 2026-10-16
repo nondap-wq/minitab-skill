@@ -1,0 +1,5 @@
+#senate2.mtb
+note Please wait while I load the data file.
+retr 'senators\senate97.mtw'
+
+end

@@ -1,0 +1,32 @@
+﻿{
+ "platform": "Windows-10-10.0.26200-SP0",
+ "python": "3.11.15",
+ "python_bits": 32,
+ "registrations": {
+  "Mtb.Application CLSID": "{6265486C-4A08-4B4E-9713-C2CD85F1F515}"
+ },
+ "typelib": {
+  "libid": "{0BC1FB77-06FC-418D-8005-D1942B1FA493}",
+  "name": "Mtb 20.0 Type Library",
+  "win32": "D:\\Program Files\\Minitab\\Mtb.exe\\2",
+  "win64": "D:\\Program Files\\Minitab\\Mtb.exe\\2",
+  "loadable": true,
+  "types": 52
+ },
+ "server": {
+  "LocalServer32": "\"D:\\Program Files\\Minitab\\Mtb.exe\"",
+  "file_version": "",
+  "product_version": "",
+  "dispatch": "fail: com_error(-2146959355, '����������ʧ��', None, None)",
+  "hresult": "0x80080005",
+  "diagnosis": {
+   "name": "CO_E_SERVER_EXEC_FAILURE",
+   "cause": "COM �������������ʧ�ܣ�Minitab ���������������Ҫ����ԱȨ�ޣ�",
+   "solution": "���ֶ��Թ���Ա������ Minitab ��ȷ�ϴ����������֣��鿴Ӧ���¼���־�� Mtb.exe �ı���ģ��"
+  }
+ },
+ "ready": false,
+ "remediation": [
+  "�Թ���Ա����ֶ���� Minitab��ȷ�ϴ��ڳ��ֺ����ԣ������� ����>ѡ��>OLE/COM>Enable Automation"
+ ]
+}

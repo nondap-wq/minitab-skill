@@ -1,0 +1,9 @@
+let k99=k99+1
+let k98=c52(k99)
+let k52=c55(k99)
+let k53=sqrt(100*(1-(k51**2)))
+rand 1 c54;
+norm k52 k53.
+copy c54 k54
+let c53(k99)=k54
+end
