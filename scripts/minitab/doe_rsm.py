@@ -1,17 +1,26 @@
 """DOE / 响应曲面（CCD）工作流 —— 全部由 Minitab 自身计算。
 
-真机验证过的事实（Minitab 22 + COM，全部记录在 runtime/evidence/VERIFIED.md）：
+真机验证过的事实（Minitab 20 / 22 + COM，记录见 runtime/evidence/）：
 
+0. **COM 启动的 Minitab 默认 `UserInterface.Visible = False`（无头）**，此时会话命令
+   被**静默丢弃**：不执行、不报错、`Commands.Count` 不增长。必须先设 `Visible = True`。
+   `DisplayAlerts` 必须保持 **True**：设 False 会吞掉错误报告并把命令队列永久卡死。
 1. 命令必须**单行**发送，子命令用 ';' 分隔、以 '.' 结束。
    跨行续写（.mtb 文件里换行）会被拆成独立命令 → "Syntax Error"。
-2. 模型类命令（RSREG/REGRESS/FITLINE）用**同步** ExecuteCommand 会挂起；
-   必须用 `ExecuteCommandAsync` 提交，然后轮询 `Project.Commands.Count` 增长来判断完成，
-   完成前**不能**再提交任何命令（否则报 "Minitab 正忙于处理操作"）。
+2. 模型类命令（RSREG/REGRESS/FITLINE）应使用 `ExecuteCommandAsync` 提交，
+   并轮询 `Project.Commands.Count` 增长判断是否被**受理**；完成前**不能**再提交命令
+   （否则报 "Minitab 正忙于处理操作"）。注意 Count 增长不代表算完，出图需再等文件落盘。
 3. RSREG 必需子命令：RESPONSE / FACTOR / TERMS / INUNIT / LEVELS
-   缺 INUNIT 或 LEVELS 会报 "* 错误 * INUNIT 是所要求的子命令"。
-   TERMS 里平方项写成 `C6*C6`（列号*列号），不能用 `A*A` 形式的名字。
+   - `TERMS` 不可省，否则报 "* 错误 * TERMS 是所要求的子命令"
+   - **没有** `FIT` 子命令（报"子命令 FIT 失序"）→ 存拟合值用 `FITS C`
+   - **没有** `CONTOUR`/`SURFACE` 子命令（报"子命令 CONT 失序"）
+     → 模型等值线用 `CONTOURPLOT` 画拟合值列
+   - 结果表拼写：`TSUMMARY` / `TANOVA` / `TCOEFFICIENT` / `TEQUATION`
+   - TERMS 里平方项写成 `C6*C6`（列号*列号），不能用 `A*A` 形式的名字。
 4. CAPA 必需规格限：`CAPA C1 1; LSPEC 9; USPEC 17.`
-5. 结果读取：`Command.Name` 是分析标题；每个 `Command.Outputs.Item(k).Text` 是输出表原文。
+5. 图形命令的列必须用**星号**分隔：`CONTOURPLOT z*y*x`；命令名是 `SURFACEPLOT`。
+6. 结果读取：`Command.Name` 是分析标题；输出原文
+   **Mtb 20** 用 `Command.OutputDocument.Text`，**Mtb 22** 用 `Command.Outputs.Item(k).Text`。
 """
 
 from __future__ import annotations
@@ -34,7 +43,10 @@ COMMANDS = {
     # 一般回归：REGRESS 需要 RESPONSE + CONTINUOUS 子命令（真机报"1 变元太多"即此因）
     "regress": "REGRESS; RESPONSE {response}; CONTINUOUS {predictors}.",
     # 等值线：z * y * x（z 为被绘制变量，y 为纵轴，x 为横轴）
-    "contour": 'CONTOURPLOT {z} {y} {x}; GSAVE "{png}".',
+    # 注意：列之间必须用 **星号** 分隔；空格形式会报 Syntax Error（Minitab 20/22 真机验证）
+    "contour": 'CONTOURPLOT {z}*{y}*{x}; GSAVE "{png}".',
+    # 3D 曲面：同样是星号分隔；命令名是 SURFACEPLOT（没有 SURFPLOT）
+    "surface": 'SURFACEPLOT {z}*{y}*{x}; GSAVE "{png}".',
     "surface_data": "LET {target} = {expr}",
     "describe": "DESCRIBE {cols}.",
     "histogram": "HISTOGRAM {cols}.",
@@ -100,6 +112,16 @@ class MinitabSession:
             self.app.UserInterface.Visible = visible
         except Exception:  # noqa: BLE001
             pass
+        # DisplayAlerts 必须保持 True：设 False 会吞掉错误报告，出错命令留下的
+        # 未决状态会把命令队列永久卡死（后续一律报"正忙于处理操作"）。
+        try:
+            self.app.UserInterface.DisplayAlerts = True
+            self.app.UserInterface.Interactive = True
+        except Exception:  # noqa: BLE001
+            pass
+        # 无头模式（Visible=False）下命令会被静默丢弃，等窗口初始化
+        if visible:
+            time.sleep(3)
         project = self.app.ActiveProject
         if project is None:
             self.app.New()
@@ -159,15 +181,28 @@ class MinitabSession:
             if want and want not in name:
                 continue
             texts = []
+            # 输出读取因 Minitab 版本而异：
+            #   Mtb 20 -> Command.OutputDocument.Text（IMTBCommand 没有 Outputs 属性）
+            #   Mtb 22 -> Command.Outputs.Item(k).Text（旧记录）
             try:
-                outs = cmd.Outputs
+                od = cmd.OutputDocument
+                if od is not None:
+                    t = str(getattr(od, "Text", "") or "")
+                    if t.strip():
+                        texts.append(t)
             except Exception:  # noqa: BLE001
-                continue
-            for k in range(1, outs.Count + 1):
+                pass
+            if not texts:
                 try:
-                    texts.append(str(outs.Item(k).Text))
+                    outs = cmd.Outputs
                 except Exception:  # noqa: BLE001
-                    continue
+                    outs = None
+                if outs is not None:
+                    for k in range(1, outs.Count + 1):
+                        try:
+                            texts.append(str(outs.Item(k).Text))
+                        except Exception:  # noqa: BLE001
+                            continue
             out.append({"name": name, "texts": texts})
         return out
 

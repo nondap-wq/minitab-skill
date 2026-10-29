@@ -71,30 +71,37 @@ def build_rsm_macro(response_col: str, factor_cols: list[str], terms: str,
     name = _safe_name(name)
     factors = " ".join(factor_cols)
     lines = [
-        f"GMACRO",
-        f"  # {name}: 响应曲面拟合（最小二乘全二次模型）",
+        "GMACRO",
+        f"  # {name}: response surface (least squares, full quadratic)",
         f"  NOTE === {name} start ===",
-        f"  RSREG; RESPONSE {response_col}; FACTOR {factors}; TERMS {terms}; INUNIT {inunit}; LEVELS {levels}; FITS {fits_col}; RESIDUALS {resid_col}.",
+        f"  RSREG; RESPONSE {response_col}; FACTOR {factors}; TERMS {terms}; "
+        f"INUNIT {inunit}; LEVELS {levels}; TSUMMARY; TANOVA; TCOEFFICIENT; "
+        f"TEQUATION; FITS {fits_col}; RESIDUALS {resid_col}.",
     ]
     if contour_png:
-        lines.append(f'  CONTOURPLOT {fits_col} {factor_cols[1]} {factor_cols[0]}; GSAVE "{contour_png}".')
+        # 图形命令的列必须用星号分隔（z*y*x），空格形式报 Syntax Error
+        lines.append(f'  CONTOURPLOT {fits_col}*{factor_cols[1]}*{factor_cols[0]}; '
+                     f'GSAVE "{contour_png}".')
     lines += [f"  NOTE === {name} done ===", "ENDMACRO"]
     body = "\n".join(lines) + "\n"
 
     GENERATED_DIR.mkdir(parents=True, exist_ok=True)
     path = GENERATED_DIR / f"{name}.MAC"
+    # 宏文件只写 ASCII：中文会被 Minitab 的宏解释器当未知命令/乱码。
     path.write_text(body, encoding="ascii", errors="replace")
     return MacroPlan(
         name=name,
         path=str(path),
         kind="generated",
         purpose=f"响应曲面：{response_col} ~ {factors}",
-        invocation=f'%{name}',
+        invocation=f"%{name}",
         args=[response_col, *factor_cols],
         body=body,
         notes=[
-            "宏已写入 skill/runtime/generated_macros/，Minitab 需能访问该路径（可用 EXECUTE 绝对路径调用）",
-            "若宏调用失败，直接回退到 COM 单行命令（com_executor / doe_rsm）",
+            "宏已写入 skill/runtime/generated_macros/；Minitab 需在该目录或宏搜索路径下。",
+            "调用方式必须是 %NAME（或 %%NAME），**不能**用 EXECUTE \"*.MAC\" —— "
+            "EXECUTE 只跑 exec 文件，会把 GMACRO 当普通命令并报『未知 Minitab 命令: GMAC』。",
+            "若宏调用失败，直接回退到 COM 单行命令（com_executor / doe_rsm）。",
         ],
     )
 
@@ -104,9 +111,10 @@ def build_chart_macro(z_col: str, y_col: str, x_col: str, png: str,
     name = _safe_name(name)
     body = "\n".join([
         "GMACRO",
-        f"  # {name}: 等值线图导出 PNG",
+        f"  # {name}: contour plot exported to PNG",
         f"  NOTE === {name} start ===",
-        f'  CONTOURPLOT {z_col} {y_col} {x_col}; GSAVE "{png}".',
+        # 星号分隔 z*y*x；空格形式报 Syntax Error
+        f'  CONTOURPLOT {z_col}*{y_col}*{x_col}; GSAVE "{png}".',
         f"  NOTE === {name} done ===",
         "ENDMACRO",
     ]) + "\n"

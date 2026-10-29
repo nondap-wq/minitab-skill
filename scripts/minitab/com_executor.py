@@ -272,6 +272,19 @@ class ComBackend:
                 self._trace("connect: Visible ok")
         except Exception as exc:  # noqa: BLE001
             self._trace(f"connect: Visible skipped ({exc!r})")
+        # DisplayAlerts 必须保持 True。设 False 会吞掉错误报告，出错命令留下的未决状态
+        # 会把命令队列永久卡死（后续一律报"正忙于处理操作"）；保持 True 时错误会以
+        # 'Syntax Error' 登记为命令名，可据此逐条迭代语法。
+        try:
+            self._app.UserInterface.DisplayAlerts = True
+            self._app.UserInterface.Interactive = True
+            self._trace("connect: DisplayAlerts=True")
+        except Exception as exc:  # noqa: BLE001
+            self._trace(f"connect: DisplayAlerts skipped ({exc!r})")
+        if self.visible:
+            # 无头模式下命令会被静默丢弃；给窗口留出初始化时间
+            self._trace("connect: wait for UI init")
+            time.sleep(3)
         try:
             self._trace("connect: ActiveProject")
             self._project = self._app.ActiveProject
@@ -382,6 +395,17 @@ class ComBackend:
                         break
                     except Exception:  # noqa: BLE001
                         continue
+                # 输出原文按版本取：Mtb 20 用 OutputDocument.Text（无 Outputs 属性）；
+                # Mtb 22 旧记录用 Outputs.Item(k).Text。先试前者，再回退。
+                try:
+                    od = cmd.OutputDocument
+                    if od is not None:
+                        txt = str(getattr(od, "Text", "") or "")
+                        if txt.strip():
+                            entry["text"] = txt
+                            entry["text_source"] = "OutputDocument"
+                except Exception:  # noqa: BLE001
+                    pass
                 try:
                     out_coll = cmd.Outputs
                     entry["outputs"] = out_coll.Count

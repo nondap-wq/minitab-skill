@@ -7,6 +7,11 @@ description: Minitab COM 自动化 AI Skill（自然语言 → 意图解析 → 
 
 五层闭环：`意图解析 → 知识库检索 → 代码生成 → COM 执行 → 知识回写`。零第三方依赖（只需 pywin32）。
 
+> ⚠️ **Agent 无法读取 Minitab 弹窗内的报错信息。**
+> Minitab 弹出模态对话框时，COM 侧只能看到"命令无返回 + 后续一律报『正忙于处理操作』"，
+> 真实原因只在弹窗文字里。**请让用户手动复制弹窗报错原文发给 Agent**，
+> 可将定位从数十次盲试压缩到一次迭代。详见 `README.md`。
+
 ## 何时使用
 
 - 用户要用**自然语言**让 Minitab 做统计分析（过程能力、控制图、MSA、DOE、描述性统计、图形）。
@@ -26,9 +31,14 @@ scripts/minitab/                 Python 包（五层实现）
   orchestrator.py                五层编排
   cli.py                         CLI 入口
 scripts/minitab_cli.py           CLI 入口（无需安装）
-runtime/knowledge/experience.db  知识库（自动创建）
+scripts/knowledge/experience.db  知识库（**DEFAULT_DB，运行时实际写入位置**）
+examples/ccd_rsm_charts.py      可运行示例：CCD 全二次 RSM + 4 张原生图表
 runtime/artifacts/               生成脚本与输出
+runtime/evidence/               真机验证记录与测试报告
 ```
+
+> 知识库路径以 `knowledge_base.py` 的 `DEFAULT_DB` 为准（`scripts/knowledge/experience.db`）。
+> 旧版文档写的 `runtime/knowledge/experience.db` 已废弃，历史记录已合并进当前库。
 
 ## 命令
 
@@ -78,6 +88,11 @@ CLI 检查：`minitab_cli.py macro --route "<任务>"`、`macro --search "<关�
 | `contour plot for design window` | generated_macro | `%MTB_CHART` |
 | `capability analysis C1 LSL=9 USL=17` | com | `CAPA C1 1; LSPEC 9; USPEC 17.` |
 
+> ⚠️ 上表是**路由决策**层面的实测，不代表宏一定能跑通。
+> 截至 2026-10-28，`%MTB_RSM` 在 Minitab 20 上仍未跑通（见「已知限制」）；
+> **CCD / RSM / 等高线请直接走 `examples/ccd_rsm_charts.py` 的 COM 路径**，
+> 或手工发送下表的会话命令。
+
 ```powershell
 python <skill>\scripts\minitab_cli.py macro                          # 策略 + 宏库统计
 python <skill>\scripts\minitab_cli.py macro --search "contour plot"  # 宏库检索
@@ -85,31 +100,62 @@ python <skill>\scripts\minitab_cli.py macro --route "CCD response surface for PN
 python <skill>\scripts\minitab_cli.py macro --reindex                # 重建宏索引
 ```
 
-**完成信号（出图收尾）**：图形命令用 `MinitabSession.run_macro_with_artifact(invocation, png)`
-（轮询 PNG 落盘）；分析命令用 `submit_and_wait`（轮询 `Commands.Count` 增长）；
+**完成信号（出图收尾）**：分析命令用 `submit_and_wait`（轮询 `Commands.Count` 增长只代表被受理）；
+图形命令必须再轮询 **PNG 落盘**才算完成（`GSAVE` 是异步落盘）。
 宏整体执行用 `wait_idle`（历史若干轮不再增长）。
 
-## 真机验证过的命令（Minitab 22，必须逐字遵守）
+**对象模型要点（Minitab COM 与 Excel 不同，别想当然）**
+
+| 想做的事 | 错误写法 | 正确写法 |
+|---|---|---|
+| 显示窗口 | `MTB.Visible = True` | `MTB.UserInterface.Visible = True` |
+| 建列 | `WS.Columns.Item(1)`（新表列数为 0） | `WS.Columns.Add(Quantity=n)` |
+| 单元格 | `WS.Cells(r,c).Value` | `WS.Columns.Item(i).SetData([...])` |
+| 列名 | `col.Label = "x"`（**只读**） | `col.Name = "x"` |
+| 追加数据 | `SetData` 传含 `None` 的列表 | 先写主体，再 `SetData([v1,v2], StartRow=10, NumRows=2)` |
+
+> `SetData` 是**整体替换**语义；配合 `StartRow` 时未覆盖的前段会被填哨兵值 `1.23456e+30`。
+
+## 真机验证过的命令（Minitab 20 / 22，必须逐字遵守）
 
 | 任务 | 可用命令（**单行**，子命令 `;` 分隔、`.` 结束） |
 |---|---|
 | 过程能力 | `CAPA C1 1; LSPEC 9; USPEC 17.`（**至少一个规格限**，否则报"1 变元太少"） |
-| 响应曲面/CCD | `RSREG; RESPONSE C9; FACTOR C6 C7; TERMS C6 C7 C6*C6 C7*C7 C6*C7; INUNIT 1; LEVELS -1000 0 8 14.` |
+| 响应曲面/CCD | `RSREG; RESPONSE C5; FACTOR C3 C4; TERMS C3 C4 C3*C3 C4*C4 C3*C4; INUNIT 1; LEVELS 100 300 200 400; TSUMMARY; TANOVA; TCOEFFICIENT; TEQUATION; FITS C6; RESIDUALS C7.` |
 | 一般回归 | `REGRESS; RESPONSE C9; CONTINUOUS C6 C7.` |
-| 等值线 | `CONTOURPLOT <z> <y> <x>; GSAVE "out.png".` |
+| **等值线** | `CONTOURPLOT C5*C4*C3; GSAVE "out.png".`（**星号分隔 z\*y\*x**，空格形式报 Syntax Error） |
+| **3D 曲面** | `SURFACEPLOT C5*C4*C3; GSAVE "out.png".`（命令名是 `SURFACEPLOT`，**没有** `SURFPLOT`） |
 | 描述统计 | `DESCRIBE C1 C2.` |
 | 图形 | `HISTOGRAM C1.` / `BOXPLOT C1.` |
 
+**`RSREG` 子命令要点**
+- **必需**：`RESPONSE` / `FACTOR` / `TERMS` / `INUNIT` / `LEVELS`。
+  `TERMS` 不能省，否则报「TERMS 是所要求的子命令」。
+- **不存在** `FIT`（报「子命令 FIT 失序，或者对于该命令无效」）→ 存拟合值用 `FITS C6`。
+- **不存在** `CONTOUR` / `SURFACE`（报「子命令 CONT 失序」）→ 模型等值线请用
+  `CONTOURPLOT` 画拟合值列（`C6*C4*C3`）。
+- 结果表子命令拼写：`TSUMMARY` / `TANOVA` / `TCOEFFICIENT` / `TEQUATION`
+  （少一个 U 会被截断成 `TSMM` 并报「失序」）。
+- 平方项写 `C3*C3`，不能用 `A*A`；`INUNIT 0`（编码因子）会被拒，用 `INUNIT 1` + `LEVELS`。
+
 **COM 提交协议（踩坑总结，务必遵守）**
-1. 命令必须**单行**；`.mtb` 命令文件里的换行续写会被拆成独立命令 → `Syntax Error`。
-2. 分析类命令（`RSREG`/`REGRESS`/`FITLINE`）用**同步** `ExecuteCommand` 会**挂起**；必须
-   `ExecuteCommandAsync` 提交，然后轮询 `Project.Commands.Count` 增长判断完成；
-   **完成前提交下一条会报 "IProject: Minitab 正忙于处理操作"**（`skill/scripts/minitab/doe_rsm.py::MinitabSession.submit_and_wait`）。
-3. `RSREG` **必需** `INUNIT` 与 `LEVELS`（缺则报"INUNIT 是所要求的子命令"）；
-   平方项写 `C6*C6`，不能用 `A*A`；`INUNIT 0`（编码因子）会被拒，用 `INUNIT 1` + `LEVELS`。
-4. 只写数值列（文本列写入会挂起）；`Column.RowCount` 写入后不刷新，不能当写入判据。
-5. 读结果：`Command.Name` 是分析标题；`Command.Outputs.Item(k).Text` 是 Minitab 输出表**原文**。
-6. 一个 Minitab 实例同一时刻只接受一条分析命令；批量任务要串行 + 等待。
+1. **`UserInterface.Visible` 必须设 `True`**：COM 启动的 Minitab 默认**无头**
+   （`Visible=False`），此时会话命令被**静默丢弃**——不执行、不报错、`Commands.Count` 不增长。
+   这是最隐蔽的坑；设完等 2–3 s 让窗口初始化。
+2. **`DisplayAlerts` 必须设 `True`**：设 `False` 会吞掉错误报告，出错命令留下的未决状态
+   把命令队列**永久卡死**（后续一律"正忙于处理操作"）。保持 `True` 时错误会以
+   `Syntax Error` 作为命令名登记出来，可据此逐条迭代语法。
+3. 命令必须**单行**；`.mtb` 命令文件里的换行续写会被拆成独立命令 → `Syntax Error`。
+4. 分析类命令用 `ExecuteCommandAsync` 提交，然后轮询 `Project.Commands.Count` 增长判断是否被接收；
+   **完成前提交下一条会报 "IProject: Minitab 正忙于处理操作"**。
+   注意 `Count` 增长只代表命令被**受理**，不代表算完——图形命令需再轮询 PNG 落盘。
+5. **只写数值列**（文本列写入会挂起）；`Column.RowCount` 写入后不刷新，不能当写入判据。
+6. 读结果：`Command.Name` 是分析标题；输出原文按版本取——
+   **Mtb 20** 用 `Command.OutputDocument.Text`（无 `Outputs` 属性）；
+   **Mtb 22** 早期记录为 `Command.Outputs.Item(k).Text`。代码里建议双路 try。
+7. 一个 Minitab 实例同一时刻只接受一条分析命令；批量任务要串行 + 等待。
+8. **遇到 `*** HANG ***` 先看弹窗**：让用户复制 Minitab 窗口内的报错原文，
+   这是唯一可靠的诊断信息（Agent 读不到弹窗文字）。
 
 ## 内置资料（不必通读，按关键词检索）
 
@@ -117,7 +163,9 @@ python <skill>\scripts\minitab_cli.py macro --reindex                # 重建宏
 reference/Minitab_session_commands.pdf    官方会话命令参考（1204 页）
 reference/Minitab_session_commands.txt    抽取后的带页码文本（<<<PAGE n>>> 标记）
 reference/search_commands.py              关键词检索工具
-macros/                                   官方宏库（56 个 .MTB：比例推断/置信区间模拟/随机抽样/条形图）
+macros/                                   官方宏库（.MTB：比例推断/置信区间模拟/随机抽样/条形图）
+examples/ccd_rsm_charts.py                可运行示例：CCD 全二次 RSM + 4 张原生图表
+runtime/evidence/                         真机验证记录（含 CCD_2026-10-28.md 与图表原件）
 ```
 
 ```powershell
@@ -147,3 +195,22 @@ python <skill>\reference\search_commands.py --list                  # 列出全�
 - 检索使用字符二元组相似度（无向量库依赖）；接口与向量库后端兼容，可替换 `KnowledgeBase.retrieve_similar`。
 - `capture_outputs` 只读取命令行历史里的输出文档标题；若需要完整 CSV 导出，用会话命令 `WSAVE` 或 `SaveAs`（见 `export_outputs`）。
 - DOE 生成的是 2^3 全因子占位语法，实际设计需用户补充因子/水平。
+- **官方宏库无 RSM/CCD/等高线能力**（`macros/` 仅比例推断、置信区间模拟、随机抽样、条形图），
+  这类任务走 COM 会话命令。
+- **自动生成的 GMACRO 宏（`%MTB_RSM`）在 Minitab 20 上尚未跑通**：用 `EXECUTE "*.MAC"`
+  调用会报「未知 Minitab 命令: GMAC」（`EXECUTE` 是给 exec 文件的，宏应用 `%NAME` 调用）。
+  在修好之前，CCD/RSM 请直接用 `examples/ccd_rsm_charts.py` 的 COM 路径。
+- 强制结束 Minitab 进程后，`%TEMP%\gen_py` 缓存可能损坏，表现为
+  `AttributeError: module 'win32com.gen_py...' has no attribute 'CLSIDToClassMap'`；
+  清空该目录即可恢复。
+
+## 故障排查速查
+
+| 现象 | 处理 |
+|---|---|
+| 命令全部挂起、无任何返回 | **看 Minitab 窗口有无弹窗**，请用户复制报错原文 |
+| `未知 Minitab 命令: GMAC` | `EXECUTE` 用于 exec 文件；调用宏用 `%NAME` |
+| `gen_py ... CLSIDToClassMap` | 清空 `%TEMP%\gen_py` |
+| `IColumns 不能为空` | 先 `Columns.Add()` |
+| `设置 (null) 中的数据值时出错` | `SetData` 列表含 `None` |
+| 子命令被截断（如 `CONT`/`TSMM`/`GMAC`） | 该子命令不存在或拼写错误，Minitab 截断后报「失序」 |

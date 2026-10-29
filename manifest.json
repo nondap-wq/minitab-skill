@@ -10,6 +10,17 @@
   },
   "verification": {
     "dry_run": "scripts/minitab_cli.py demo  -> 4/4 success, experiences written",
-    "live_com": "blocked: Mtb.exe 22.1.0.0 crashes at startup (libcef.dll 0x80000003) -> 0x80080005 CO_E_SERVER_EXEC_FAILURE"
-  }
+    "live_com": "OK on Minitab 20.0 (Mtb 20.0 Type Library). Verified 2026-10-28: RSREG full-quadratic fit + CONTOURPLOT/SURFACEPLOT chart export (4 PNG) on a 2-factor CCD design.",
+    "last_verified": "2026-10-28",
+    "verified_command_families": [
+      "DESCRIBE", "FITLINE", "HISTOGRAM", "PLOT",
+      "CAPA", "RSREG", "CONTOURPLOT", "SURFACEPLOT"
+    ],
+    "known_issues": [
+      "Generated GMACRO macro (%MTB_RSM) not working on Minitab 20: EXECUTE '*.MAC' reports '未知 Minitab 命令: GMAC'; macros must be invoked as %NAME.",
+      "UserInterface.Visible defaults to False (headless) and silently drops commands; must set True.",
+      "DisplayAlerts=False swallows errors and wedges the command queue; must stay True."
+    ]
+  },
+  "knowledge_db": "scripts/knowledge/experience.db (KnowledgeBase.DEFAULT_DB; runtime/knowledge/*.db is legacy/deprecated)"
 }
